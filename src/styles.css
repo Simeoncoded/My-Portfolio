@@ -1,1 +1,49 @@
 /* You can add global styles to this file, and also import other style files */
+:root{
+    --bg:#0b1220; --panel:#111a2b; --text:#e9eef7;--muted:#9fb0c9;
+    --accent:#5b86ff; --border:rgba(255,255,255,.08); --r:14px;
+}
+*{
+    box-sizing: border-box;
+}
+html,body{
+    margin: 0;
+    background: var(--bg); 
+    color:var(--text);
+    font-family: Inter, system-ui, Segoe UI, Roboto, Arial, sans-serif;
+}
+a{
+    color:var(--accent);
+    text-decoration: none;
+}
+.container{
+    max-width: 1080px;
+    margin: auto;
+    padding: 0 20px;
+}
+.section{
+    padding:80px 0;
+}
+.card{
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius:var(--r);
+    padding: 16px;
+}
+.btn{
+    border: 1px solid var(--border);
+    padding: 10px 14px;
+    border-radius: 12px;
+}
+.btn-primary{
+    background: var(--accent);
+    color:#fff;
+    border-color:transparent;
+}
+.muted{
+    color:var(--muted)
+}
+html{
+    scroll-behavior: smooth;
+}
+
