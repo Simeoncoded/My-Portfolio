@@ -1,26 +1,29 @@
-<header class="container" style="position: sticky; top:0; z-index: 10;backdrop-filter: blur(8px);
-background:rgba(11,18,32,.65);border-bottom:1px solid var(--border);">
-  <nav style="display: flex;align-items:center;justify-content: space-between;height: 64px;">
-    <strong>Simeon Olawore</strong>
-    <div style="display: flex;gap:16px;align-items: center;">
-      <a href="about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-      <a class="btn btn-primary" href="#projects">View Projects</a>
-    </div>
-  </nav>
+<header class="site-header">
+  <div class="container">
+      <nav style="display: flex; align-items: center;justify-content: space-between; height: 64px;">
+        <strong>Simeon Olawore</strong>
+        <div style="display: flex;gap:16px; align-items: center;">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+          <a class="btn btn-primary" href="#projects">View Projects</a>
+        </div>
+      </nav>
+  </div>
 </header>
 
-<main>
-  <!-- <app-hero></app-hero> -->
+<main class="container section">
+  <!--Content -->
 </main>
 
-<footer class="container section" style="border-top:1px solid var(--border);
-display: flex; justify-content: space-between;gap:12px;flex-wrap: wrap;">
-  <span>© {{year}} Simeon Olawore</span>
-  <div style="display: flex; gap:12px">
-    <a href="https://github.com/Simeoncoded" target="_blank" rel="noopener">GitHub</a>
-    <a href="https://www.linkedin.com/in/solawore/" target="_blank" rel="noopener">LinkedIn</a>
-    <a href="mailto:simeonolawore07@gmail.com">Email</a>
+<footer class="site-footer">
+  <div class="container section" style="display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap;">
+    <span>© {{year}} Simeon Olawore</span>
+    <div style="display: flex;gap:12px;">
+      <div style="display:flex;gap:12px">
+        <a href="https://github.com/Simeoncoded" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/solawore/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:simeonolawore07@gmail.com">Email</a>
+    </div>
   </div>
 </footer>
