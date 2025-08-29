@@ -11,6 +11,7 @@ import { HeroComponent } from './features/hero/hero.component';
   styleUrl: './app.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
+
 export class App {
   protected readonly title = signal('My-Portfolio');
   year = new Date().getFullYear();
