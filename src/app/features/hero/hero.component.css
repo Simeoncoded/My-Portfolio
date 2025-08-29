@@ -2,21 +2,62 @@
     display: block;
 }
 .hero{
-    min-height: 60vh;
+    min-height: clamp(420px, 68vh, 760px);
     display: grid;
-    gap: 16px;
-    align-content: center;
+    align-items: center;
+}
+.hero-grid{
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    align-items: center;
+    gap:clamp(16px, 3vw, 32px);
 }
 .hero-title{
-    font-size: clamp(36px,6vw, 56px);
+    font-size: clamp(36px, 6vw, 56px);
     margin: 0;
 }
 .hero-subtitle{
     font-size: clamp(16px, 2.4vw, 22px);
-    margin: 0;
+    margin: 8px 0 0;
 }
 .hero-actions{
     display: flex;
     gap:12px;
-    margin-top: 8px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+}
+
+.cube-box{
+    aspect-ratio: 16 / 10;
+    width: min(520px, 100%);
+    overflow: hidden;
+    border: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,.35);
+    margin-left: auto;
+}
+
+@media(max-width: 1024px){
+    .hero-grid{
+        grid-template-columns: 1fr 0.9fr;
+    }
+}
+
+@media(max-width: 900px){
+    .hero-grid{
+        grid-template-columns: 1fr;
+    }
+    .cube-box{
+        margin: 24px auto 0;
+        width: 100%;
+    }
+    .hero-actions{
+        justify-content: start;
+    }
+}
+
+@media (max-width:480px) {
+    .hero-actions .btn{
+        width: 100%;
+        text-align: center;
+    }
 }
