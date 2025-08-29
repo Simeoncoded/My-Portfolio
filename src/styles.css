@@ -47,14 +47,33 @@ html{
     scroll-behavior: smooth;
 }
 
-html,body{
-    height: 100%;
+:root{
+    --footer-h: 64px;
 }
+
+.site-footer{
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--panel);
+    border-top: 1px solid var(--border);
+    z-index: 5;
+}
+
 body{
-    min-height: 100vh;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
+    padding-bottom: var(--footer-h);
 }
+
+.site-footer .inner{
+    height: var(--footer-h);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap:12px;
+    flex-wrap: wrap;
+}
+
 
 .site-header{
     position: sticky;
