@@ -21,3 +21,25 @@
         </div>
     </div>
 </section>
+
+<!--Resume Modal-->
+@if(resumeOpen())
+{
+<div class="modal" role="dialog" aria-modal="true" aria-labelledby="resume-title" (click)="onBackdrop($event)">
+    <div class="modal_panel" (keydown.escape)="closeResume()" tabindex="-1" #panel>
+        <header class="modal_header">
+            <h3 id="resume-title" class="modal_title">Resume - Simeon Olawore</h3>
+            <button type="button" class="modal_close" (click)="closeResume()" aria-label="Close">X</button>
+        </header>
+
+        <div class="modal_body">
+            <iframe class="modal_frame" src="Simeon_Olawore.pdf#view=FitH" title="Resume PDF"></iframe>
+            <p class="modal_fallback">
+                If the PDF doesn't load, <a href="Simeon_Olawore.pdf" target="_blank" rel="noopener">open it in a new
+                    tab</a>
+                or <a href="Simeon_Olawore.pdf" download>download it</a>.
+            </p>
+        </div>
+    </div>
+</div>
+}
