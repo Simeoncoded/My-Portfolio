@@ -1,0 +1,22 @@
+:host{
+    display: block;
+}
+.hero{
+    min-height: 60vh;
+    display: grid;
+    gap: 16px;
+    align-content: center;
+}
+.hero-title{
+    font-size: clamp(36px,6vw, 56px);
+    margin: 0;
+}
+.hero-subtitle{
+    font-size: clamp(16px, 2.4vw, 22px);
+    margin: 0;
+}
+.hero-actions{
+    display: flex;
+    gap:12px;
+    margin-top: 8px;
+}
