@@ -1,63 +1,63 @@
-:host{
-    display: block;
-}
-.hero{
-    min-height: clamp(420px, 68vh, 760px);
-    display: grid;
-    align-items: center;
-}
-.hero-grid{
-    display: grid;
-    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-    align-items: center;
-    gap:clamp(16px, 3vw, 32px);
-}
-.hero-title{
-    font-size: clamp(36px, 6vw, 56px);
-    margin: 0;
-}
-.hero-subtitle{
-    font-size: clamp(16px, 2.4vw, 22px);
-    margin: 8px 0 0;
-}
-.hero-actions{
-    display: flex;
-    gap:12px;
-    margin-top: 16px;
-    flex-wrap: wrap;
+:host { display: block; }
+
+.hero-section {
+  min-height: clamp(420px, 68vh, 760px);
+  display: grid;
+  align-items: center;
 }
 
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  align-items: center;
+  gap: clamp(16px, 3vw, 32px);
+}
+
+.hero-title { font-size: clamp(36px, 6vw, 56px); margin: 0; }
+.hero-subtitle { font-size: clamp(16px, 2.4vw, 22px); margin: 8px 0 0; }
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+.hero-right { justify-self: end; }    
+.hero-left  { justify-self: start; }
+
+/* cube wrapper */
 .cube-box{
-    aspect-ratio: 16 / 10;
-    width: min(520px, 100%);
-    overflow: hidden;
-    border: none;
-    box-shadow: 0 10px 30px rgba(0,0,0,.35);
-    margin-left: auto;
+  aspect-ratio: 16 / 10;
+  width: min(520px, 100%);
+  overflow: hidden;
+  border: 0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
 }
 
-@media(max-width: 1024px){
-    .hero-grid{
-        grid-template-columns: 1fr 0.9fr;
-    }
+twisty-player { width: 100%; height: 100%; display: block; }
+
+@media (max-width: 1024px){
+  .hero-grid { grid-template-columns: 1fr 0.9fr; }
 }
 
-@media(max-width: 900px){
-    .hero-grid{
-        grid-template-columns: 1fr;
-    }
-    .cube-box{
-        margin: 24px auto 0;
-        width: 100%;
-    }
-    .hero-actions{
-        justify-content: start;
-    }
+@media (max-width: 768px){
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-right { justify-self: center; width: 100%; }
+  .cube-box   { width: 100%; margin: 24px 0 0; }
+
+  .hero-actions{
+    display: grid;
+    grid-template-columns: 1fr 1fr;   
+    gap: 12px;
+  }
+  .hero-actions .btn{
+    width: 100%;
+    text-align: center;
+    white-space: nowrap;
+  }
 }
 
-@media (max-width:480px) {
-    .hero-actions .btn{
-        width: 100%;
-        text-align: center;
-    }
+@media (max-width: 360px){
+  .hero-actions { grid-template-columns: 1fr; }
 }
