@@ -1,4 +1,4 @@
-import { Component, signal, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { HeroComponent } from './features/hero/hero.component';
 import { AboutComponent } from './features/about/about.component';
 //import { RouterOutlet } from '@angular/router';
@@ -10,7 +10,6 @@ import { AboutComponent } from './features/about/about.component';
   imports: [HeroComponent, AboutComponent],
   templateUrl: './app.html',
   styleUrl: './app.css',
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 
 export class App {
