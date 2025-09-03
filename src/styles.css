@@ -118,6 +118,23 @@ a{
     color:#fff;
 }
 
+
+@media (max-width: 769px) {
+    main.container { 
+      max-width: 100%;
+      padding: 0;              
+    }
+    .hero-grid.container { 
+      padding-inline: 0; 
+    }
+    .site-header .container,
+    .site-footer .container,
+    .site-footer .inner {
+      padding-inline: 20px;     
+    }
+  }
+  
+
 @media(max-width: 700px){
     .menu-btn{
         display: block;
