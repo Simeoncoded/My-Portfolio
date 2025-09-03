@@ -1,72 +1,152 @@
-:host { display: block; }
+:host {
+    display: block;
+}
 
+.container {
+    max-width: 1100px;
+    margin-inline: auto;
+    padding-inline: clamp(16px, 4vw, 32px);
+}
+
+/* --- HERO --- */
 .hero-section {
-  min-height: clamp(420px, 68vh, 760px);
-  display: grid;
-  align-items: center;
+    min-height: 60vh;
+    display: grid;
+    align-items: center;
+    padding-block: clamp(24px, 6vw, 56px);
+    overflow: hidden;
 }
 
 .hero-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-  align-items: center;
-  gap: clamp(16px, 3vw, 32px);
+    display: grid;
+    grid-template-columns: 1fr 0.9fr;
+    align-items: center;
+    gap: clamp(16px, 3vw, 32px);
 }
 
-.hero-title { font-size: clamp(36px, 6vw, 56px); margin: 0; }
-.hero-subtitle { font-size: clamp(16px, 2.4vw, 22px); margin: 8px 0 0; }
+.hero-title {
+    margin: 0;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    font-size: clamp(28px, 7vw, 56px);
+}
+
+.hero-subtitle {
+    margin: 10px 0 0;
+    line-height: 1.35;
+    font-size: clamp(14px, 2.7vw, 22px);
+    opacity: .85;
+}
 
 .hero-actions {
-  display: flex;
-  gap: 12px;
-  margin-top: 16px;
-  flex-wrap: wrap;
+    display: flex;
+    gap: 12px;
+    margin-top: 16px;
+    flex-wrap: wrap;
 }
 
-.hero-right { justify-self: end; }    
-/* .hero-left  { justify-self: start; } */
+.hero-right {
+    justify-self: end;
+}
 
-/* cube wrapper */
-.cube-box{
-    position: relative;                  
+/* --- CUBE --- */
+.cube-box {
+    position: relative;
     width: min(520px, 100%);
-    aspect-ratio: 16 / 10;                   
-    min-height: 260px;                       
-    border: 0;
+    max-width: 480px;
+    aspect-ratio: 16 / 10;
+    min-height: 240px;
+    border-radius: var(--r, 16px);
     overflow: hidden;
-    border-radius: var(--r);
-  }
-  twisty-player{
+    will-change: transform;
+    margin-left: auto;
+}
+
+twisty-player {
     width: 100%;
     height: 100%;
     background: transparent !important;
-  }
-@media (max-width: 1024px){
-  .hero-grid { grid-template-columns: 1fr 0.9fr; }
-}
-@media (min-width: 901px){
-    .cube-box{ height: clamp(320px, 45vh, 520px); }
-  }
-@media (max-width: 768px){
-  .hero-grid { grid-template-columns: 1fr; }
-  .hero-right { justify-self: center; width: 100%; }
-  .cube-box   { width: 100%; margin: 24px 0 0; }
-
-  .hero-actions{
-    display: grid;
-    grid-template-columns: 1fr 1fr;   
-    gap: 12px;
-  }
-  .hero-actions .btn{
-    width: 100%;
-    text-align: center;
-    white-space: nowrap;
-  }
-  
 }
 
-@media (max-width: 360px){
-  .hero-actions { grid-template-columns: 1fr; }
+@media (max-width: 1024px) {
+    .hero-grid {
+        grid-template-columns: 1fr 0.95fr;
+    }
+
+    .cube-box {
+        max-width: 420px;
+    }
 }
 
 
+@media (min-width: 901px) {
+    .cube-box {
+        height: clamp(300px, 42vh, 520px);
+    }
+}
+
+/* Tablets & phones */
+@media (max-width: 768px) {
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: clamp(16px, 4vw, 24px);
+    }
+
+    .hero-section {
+        min-height: auto;
+        padding-block: clamp(20px, 7vw, 40px);
+    }
+
+    .hero-right {
+        justify-self: center;
+        width: 100%;
+        order: 2;
+    }
+
+    .hero-left {
+        order: 1;
+    }
+
+
+    .cube-box {
+        width: 100%;
+        max-width: 360px;
+        margin: 12px auto 0;
+        aspect-ratio: 4 / 3;
+        min-height: 220px;
+    }
+
+    .hero-actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+        text-align: center;
+        white-space: nowrap;
+    }
+}
+
+/* narrow phones */
+@media (max-width: 420px) {
+    .hero-title {
+        font-size: clamp(26px, 8vw, 40px);
+    }
+
+    .hero-subtitle {
+        font-size: clamp(13px, 3.6vw, 18px);
+    }
+
+    .cube-box {
+        max-width: 320px;
+        aspect-ratio: 1 / 1;
+    }
+
+    @media (max-width: 360px) {
+        .hero-actions {
+            grid-template-columns: 1fr;
+        }
+    }
+}
