@@ -93,3 +93,47 @@
         height: 90vh;
     }
 }
+
+
+/* PDF modal styling */
+.pdf-modal .modal-dialog {
+    max-width: 90%;          /* desktop/tablet */
+    width: 100%;
+  }
+  
+  .pdf-modal .modal-body {
+    padding: 0;
+  }
+  
+  .pdf-modal iframe,
+  .pdf-modal embed {
+    display: block;
+    width: 100%;
+    height: 80vh;            /* desktop/tablet height */
+    border: none;
+  }
+  
+  /* Small screens */
+  @media (max-width: 768px) {
+    .pdf-modal .modal-dialog {
+      max-width: 100%;       /* take full width of screen */
+      margin: 0;             /* remove side gaps */
+      height: 100%;          /* stretch vertically */
+    }
+  
+    .pdf-modal .modal-content {
+      height: 100%;
+      border-radius: 0;       /* flush edges */
+    }
+  
+    .pdf-modal .modal-body {
+      height: 100%;
+    }
+  
+    .pdf-modal iframe,
+    .pdf-modal embed {
+      width: 100vw;          /* exactly the screen width */
+      height: 100vh;         /* fill the screen height */
+    }
+  }
+  
