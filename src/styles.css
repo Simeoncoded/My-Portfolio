@@ -134,6 +134,38 @@ a{
     }
   }
   
+  @media (max-width: 768px) {
+    .site-footer .inner {
+      flex-direction: column;   /* stack vertically */
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 8px;                 /* tighter spacing */
+      padding: 8px 12px;        /* give breathing room */
+      height: auto;             /* allow auto height */
+      min-height: var(--footer-h);
+    }
+  
+    .site-footer .inner span {
+      font-size: 14px;
+      opacity: 0.85;
+    }
+  
+    .site-footer .inner a {
+      font-size: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;                 /* space between icon/text */
+    }
+  
+    .site-footer .inner > div {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+  }
+  
 
 @media(max-width: 700px){
     .menu-btn{
