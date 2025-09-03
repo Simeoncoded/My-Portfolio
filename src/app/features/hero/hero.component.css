@@ -24,7 +24,7 @@
 }
 
 .hero-right { justify-self: end; }    
-.hero-left  { justify-self: start; }
+/* .hero-left  { justify-self: start; } */
 
 /* cube wrapper */
 .cube-box{
@@ -69,4 +69,4 @@
   .hero-actions { grid-template-columns: 1fr; }
 }
 
-/*Fix rubix*/
+
