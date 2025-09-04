@@ -1,55 +1,50 @@
-.project-section {
-    padding: 60px 20px;
-  }
-  
-  .projects-grid {
+/* make all cards equal height in their rows */
+.projects-grid {
     display: grid;
-    grid-template-columns: 1fr; /* default: 1 column (mobile) */
+    grid-template-columns: 1fr; /* mobile */
     gap: 16px;
+    align-items: stretch; /* stretch grid items to same height */
   }
   
-  /* Tablet (≥768px): 2 per row */
   @media (min-width: 768px) {
-    .projects-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
+    .projects-grid { grid-template-columns: repeat(2, 1fr); }
   }
-  
-  /* Laptop / Desktop (≥1024px): 3 per row */
   @media (min-width: 1024px) {
-    .projects-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
+    .projects-grid { grid-template-columns: repeat(3, 1fr); }
   }
   
+  /* card as a column so we can push actions down */
   .project-card {
+    display: flex;
+    flex-direction: column;
     background: var(--panel, #111a2b);
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 14px rgba(0,0,0,0.2);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform .2s ease, box-shadow .2s ease;
   }
   
-  .project-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.28);
+  /* keep media nicely sized */
+  .project-media { aspect-ratio: 16 / 9; background: #000; }
+  .project-video { width: 100%; height: 100%; object-fit: cover; display: block; }
+  
+  /* content */
+  .project-title { margin: 12px 16px 4px; font-size: 1.2rem; }
+  .project-desc   { margin: 0 16px; color: var(--muted,#9fb0c9); line-height: 1.5; }
+  
+  /* pin buttons to the bottom */
+  .project-actions {
+    margin-top: auto;          /* pushes this block down */
+    padding: 12px 16px 16px;
+    display: flex;
+    gap: 10px;
   }
   
-  .project-video {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-    display: block;
+  /* optional button styles */
+  .btn { 
+    display:inline-flex; align-items:center; justify-content:center;
+    padding:8px 12px; border-radius:8px; text-decoration:none;
+    border:1px solid var(--border, rgba(255,255,255,.12));
   }
-  
-  .project-title {
-    margin: 12px 16px 4px;
-    font-size: 1.2rem;
-  }
-  
-  .project-desc {
-    margin: 0 16px 16px;
-    color: var(--muted, #9fb0c9);
-    line-height: 1.5;
-  }
+  .btn-ghost { color: var(--text,#e9eef7); background: transparent; }
   
