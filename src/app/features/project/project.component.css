@@ -1,92 +1,114 @@
-/* make all cards equal height in their rows */
-.projects-grid {
+/* ——— Section container (max width + mobile gutters) ——— */
+.project-section{
+    width: min(1100px, 100%);
+    margin-inline: auto;
+    padding-inline: clamp(16px, 4vw, 28px);
+    padding-block: clamp(24px, 6vw, 64px);
+  }
+  
+  .section-title{
+    margin: 0 0 16px;
+    text-align: center;
+    font-size: clamp(22px, 3.2vw, 32px);
+  }
+  
+  /* ——— Responsive grid (equal height rows) ——— */
+  .projects-grid{
     display: grid;
-    grid-template-columns: 1fr;
-    /* mobile */
+    grid-template-columns: 1fr;     /* mobile: 1 col */
     gap: 16px;
-    align-items: stretch;
-    /* stretch grid items to same height */
-}
-
-@media (min-width: 768px) {
-    .projects-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media(max-width:420px){
-    .projects-grid{
-        max-width: 800px;
-        margin: 0;
-    }
-    .project-card {
-        max-width: 800px;
-        margin: 0;
-    }
-}
-
-@media (min-width: 1024px) {
-    .projects-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-/* card as a column so we can push actions down */
-.project-card {
+    align-items: stretch;            /* make cards equal height per row */
+  }
+  .projects-grid > *{ min-width: 0; } /* prevent media overflow in grid items */
+  
+  @media (min-width: 768px){
+    .projects-grid{ grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (min-width: 1024px){
+    .projects-grid{ grid-template-columns: repeat(3, 1fr); }
+  }
+  
+  /* ——— Card ——— */
+  .project-card{
     display: flex;
     flex-direction: column;
     background: var(--panel, #111a2b);
+    border: 1px solid var(--border, rgba(255,255,255,.08));
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 14px rgba(0,0,0,.2);
     transition: transform .2s ease, box-shadow .2s ease;
-}
-
-/* keep media nicely sized */
-.project-media {
+  }
+  .project-card:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,.28);
+  }
+  
+  /* ——— Media: ratio wrapper + absolute fill (fixes iOS shift) ——— */
+  .project-media{
+    position: relative;
+    width: 100%;
     aspect-ratio: 16 / 9;
+    overflow: hidden;               /* clips native control edges */
     background: #000;
-}
-
-.project-video {
+  }
+  .project-video{
+    position: absolute;
+    inset: 0;                       /* top/right/bottom/left: 0 */
     width: 100%;
     height: 100%;
+    object-fit: cover;              /* use 'contain' for letterbox */
     display: block;
-}
-
-/* content */
-.project-title {
-    margin: 12px 16px 4px;
-    font-size: 1.2rem;
-}
-
-.project-desc {
-    margin: 0 16px;
-    color: var(--muted, #9fb0c9);
-    line-height: 1.5;
-}
-
-/* pin buttons to the bottom */
-.project-actions {
-    margin-top: auto;
-    /* pushes this block down */
+  }
+  
+  /* iOS/Safari nudge to avoid subtle horizontal drift */
+  @supports (-webkit-touch-callout: none){
+    .project-video{
+      -webkit-transform: translateZ(0);
+              transform: translateZ(0);
+    }
+  }
+  
+  /* ——— Text ——— */
+  .project-title{ margin: 12px 16px 4px; font-size: 1.2rem; }
+  .project-desc{ margin: 0 16px; color: var(--muted, #9fb0c9); line-height: 1.5; }
+  
+  /* ——— Actions pinned to bottom ——— */
+  .project-actions{
+    margin-top: auto;               /* pushes actions to bottom */
     padding: 12px 16px 16px;
     display: flex;
     gap: 10px;
-}
+  }
+  
+  /* ——— Buttons ——— */
+  .btn{
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: 8px 12px; border-radius: 8px; text-decoration: none;
+    border: 1px solid var(--border, rgba(255,255,255,.12));
+    transition: background .2s ease, transform .2s ease;
+  }
+  .btn-ghost{ background: transparent; color: var(--text, #e9eef7); }
+  .btn:hover{ transform: translateY(-1px); }
+  
+  /* ——— Global safety net for media ——— */
+  img, video{ max-width: 100%; height: auto; }
+  
+  /* ——— Optional: on very small screens, avoid cropping under the control bar ——— */
+  @media (max-width: 480px){
+    .project-video{ object-fit: contain; background: #000; }
+  }
+  
+  /* Reset default figure margins so media doesn't shift right on iOS */
+figure.project-media { margin: 0; }
+.project-media { margin: 0; display: block; }
 
-/* optional button styles */
-.btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 8px 12px;
-    border-radius: 8px;
-    text-decoration: none;
-    border: 1px solid var(--border, rgba(255, 255, 255, .12));
-}
-
-.btn-ghost {
-    color: var(--text, #e9eef7);
-    background: transparent;
+/* Keep the video fully pinned inside the ratio box */
+.project-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* or 'contain' if you prefer letterboxing */
+  display: block;
 }
