@@ -6,6 +6,11 @@
     align-items: stretch; /* stretch grid items to same height */
   }
   
+  .project-section{
+    max-width: 1000px;
+    margin: auto;
+  }
+
   @media (min-width: 768px) {
     .projects-grid { grid-template-columns: repeat(2, 1fr); }
   }
