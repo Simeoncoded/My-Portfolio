@@ -1,19 +1,36 @@
-<section id="contact" class="contact-section">
-    <div>
-        <form>
-            <div>
-                <label></label>
-                <input placeholder="Your name here" type="text"/>
+<section id="contact" class="contact-section" aria-labelledby="contact-title">
+    <div class="contact-wrap">
+        <h2 id="contact-title" class="contact-title">Lets Connect</h2>
+
+        <form class="contact-form" novalidate>
+            <div class="field">
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" placeholder="Your name" autocomplete="name" required
+                    minlength="2" />
+                <!-- <small class="help">Please enter at least 2 characters.</small> -->
             </div>
-            <div>
-                <label></label>
-                <input placeholder="Your email here" type="email"/>
+
+            <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="_replyto" type="email" placeholder="you@example.com" autocomplete="email"
+                    required />
+                <!-- <small class="help">We’ll reply to this address.</small> -->
             </div>
-            <div>
-                <label></label>
-                <textarea placeholder="Your message...">
+
+            <div class="field full">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Your message…" rows="6" required minlength="10"
+                    maxlength="2000"></textarea>
+                <!-- <small class="help">Minimum 10 characters.</small> -->
             </div>
-          
+
+            <!-- Honeypot (spam trap) -->
+            <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+            <div class="actions">
+                <button type="submit" class="btn btn-primary">Send</button>
+                <span class="form-status" role="status" aria-live="polite"></span>
+            </div>
         </form>
     </div>
 </section>
