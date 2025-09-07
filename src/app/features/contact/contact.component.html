@@ -2,36 +2,41 @@
     <div class="contact-wrap">
       <h2 id="contact-title" class="contact-title">Let’s Connect</h2>
   
-      <p *ngIf="sent()" class="success-banner" role="status">Thanks! Your message was sent.</p>
-      <p *ngIf="error()" class="error-banner" role="alert">{{ error() }}</p>
-  
-      <form class="contact-form" [formGroup]="form" (ngSubmit)="submit()" novalidate>
+      <form id="contactForm" class="contact-form"
+            action="https://formspree.io/f/xovnyezy"
+            method="POST" accept-charset="utf-8">
+        
         <div class="field">
           <label for="name">Name</label>
-          <input id="name" formControlName="name" type="text"
-                 placeholder="Your name" autocomplete="name" [disabled]="sending()" required>
+          <input id="name" name="name" type="text"
+                 placeholder="Your name"
+                 autocomplete="name" required minlength="2" />
         </div>
   
         <div class="field">
           <label for="email">Email</label>
-          <input id="email" formControlName="email" type="email"
-                 placeholder="you@example.com" autocomplete="email" [disabled]="sending()" required>
+          <input id="email" name="email" type="email"
+                 placeholder="you@example.com"
+                 autocomplete="email" inputmode="email" required />
         </div>
   
         <div class="field full">
           <label for="message">Message</label>
-          <textarea id="message" formControlName="message" rows="6"
-                    placeholder="Your message…" [disabled]="sending()" required></textarea>
+          <textarea id="message" name="message"
+                    placeholder="Your message…" rows="6"
+                    required minlength="10" maxlength="2000"
+                    spellcheck="true"></textarea>
         </div>
   
+        <!-- Optional: subject that appears in your inbox -->
+        <input type="hidden" name="_subject" value="New message from your portfolio" />
+  
         <!-- Honeypot (spam trap) -->
-        <input type="text" formControlName="_honeypot" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <input type="text" name="_honeypot" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
   
         <div class="actions">
-          <button type="submit" class="btn btn-primary" [disabled]="sending()">
-            {{ sending() ? 'Sending…' : 'Send' }}
-          </button>
-          <span class="form-status" aria-live="polite"></span>
+          <button type="submit" class="btn btn-primary">Send</button>
+          <span class="form-status" role="status" aria-live="polite"></span>
         </div>
       </form>
     </div>
