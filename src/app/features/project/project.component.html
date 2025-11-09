@@ -5,13 +5,17 @@
     <!-- Machinery Schedules -->
     <article class="project-card">
       <figure class="project-media">
-        <img src="assets/projects/machinery-thumb.jpg"
-             alt="Machinery schedules dashboard with Gantt chart" />
+        <img
+          src="assets/projects/machinery-thumb.jpg"
+          alt="Machinery schedules dashboard with Gantt chart"
+        />
       </figure>
 
       <header class="project-head">
         <h3 class="project-title">Machinery Schedules System</h3>
-        <p class="project-subtitle">Centralized planning for Engineering, Production & Procurement.</p>
+        <p class="project-subtitle">
+          Centralized planning for Engineering, Production & Procurement.
+        </p>
       </header>
 
       <p class="project-desc">
@@ -27,8 +31,7 @@
       </div>
 
       <div class="project-actions">
-        <button class="btn btn-primary"
-                data-modal-target="#project-machinery-modal">
+        <button class="btn btn-primary" (click)="openModal('machinery')">
           See details
         </button>
         <a class="btn btn-ghost" href="#" target="_blank" rel="noopener">
@@ -40,13 +43,17 @@
     <!-- Smart Reserve -->
     <article class="project-card">
       <figure class="project-media">
-        <img src="assets/projects/smart-reserve-thumb.jpg"
-             alt="Smart Reserve AI reservation interface" />
+        <img
+          src="assets/projects/smart-reserve-thumb.jpg"
+          alt="Smart Reserve AI reservation interface"
+        />
       </figure>
 
       <header class="project-head">
         <h3 class="project-title">Smart Reserve</h3>
-        <p class="project-subtitle">AI-assisted restaurant reservations through natural language.</p>
+        <p class="project-subtitle">
+          AI-assisted restaurant reservations through natural language.
+        </p>
       </header>
 
       <p class="project-desc">
@@ -62,8 +69,7 @@
       </div>
 
       <div class="project-actions">
-        <button class="btn btn-primary"
-                data-modal-target="#project-smartreserve-modal">
+        <button class="btn btn-primary" (click)="openModal('smartreserve')">
           See details
         </button>
         <a class="btn btn-ghost" href="#" target="_blank" rel="noopener">
@@ -75,8 +81,10 @@
     <!-- Pet Adoption -->
     <article class="project-card">
       <figure class="project-media">
-        <img src="assets/projects/pet-adoption-thumb.jpg"
-             alt="Pet adoption desktop app UI" />
+        <img
+          src="assets/projects/pet-adoption-thumb.jpg"
+          alt="Pet adoption desktop app UI"
+        />
       </figure>
 
       <header class="project-head">
@@ -97,8 +105,7 @@
       </div>
 
       <div class="project-actions">
-        <button class="btn btn-primary"
-                data-modal-target="#project-petadoption-modal">
+        <button class="btn btn-primary" (click)="openModal('petadoption')">
           See details
         </button>
         <a class="btn btn-ghost" href="#" target="_blank" rel="noopener">
@@ -112,33 +119,92 @@
 <!-- ========== MODALS ========== -->
 
 <!-- Machinery Modal -->
-<div class="modal" id="project-machinery-modal" aria-hidden="true" role="dialog" aria-labelledby="machinery-title">
-  <div class="modal-backdrop" data-modal-close></div>
+<div
+  class="modal"
+  [class.is-open]="openModalId === 'machinery'"
+  [attr.aria-hidden]="openModalId === 'machinery' ? 'false' : 'true'"
+  role="dialog"
+  aria-labelledby="machinery-title"
+>
+  <div class="modal-backdrop" (click)="closeModal()"></div>
 
   <div class="modal-dialog">
-    <button class="modal-close" type="button" aria-label="Close" data-modal-close>&times;</button>
+    <button
+      class="modal-close"
+      type="button"
+      aria-label="Close"
+      (click)="closeModal()"
+    >
+      &times;
+    </button>
 
     <header class="modal-header">
-      <h3 class="modal-title" id="machinery-title">Machinery Schedules System</h3>
-      <p class="modal-subtitle">Making deadlines visible for Engineering, Production, and Procurement.</p>
+      <h3 class="modal-title" id="machinery-title">
+        Machinery Schedules System
+      </h3>
+      <p class="modal-subtitle">
+        Making deadlines visible for Engineering, Production, and Procurement.
+      </p>
     </header>
 
     <div class="modal-body">
-      <div class="modal-gallery" data-gallery>
-        <button class="gallery-nav gallery-prev" type="button" data-gallery-prev>&larr;</button>
+      <div class="modal-gallery">
+        <button
+          class="gallery-nav gallery-prev"
+          type="button"
+          (click)="changeSlide('machinery', -1)"
+        >
+          &larr;
+        </button>
 
         <div class="gallery-frame">
-          <img src="assets/projects/machinery-1.jpg" alt="Combined Gantt schedule view" class="gallery-image is-active">
-          <img src="assets/projects/machinery-2.jpg" alt="Excel Gantt export sample" class="gallery-image">
-          <img src="assets/projects/machinery-3.jpg" alt="Machine detail and deadline panel" class="gallery-image">
+          <img
+            src="assets/projects/machinery-1.jpg"
+            alt="Combined Gantt schedule view"
+            class="gallery-image"
+            [class.is-active]="currentSlide.machinery === 0"
+          />
+          <img
+            src="assets/projects/machinery-2.jpg"
+            alt="Excel Gantt export sample"
+            class="gallery-image"
+            [class.is-active]="currentSlide.machinery === 1"
+          />
+          <img
+            src="assets/projects/machinery-3.jpg"
+            alt="Machine detail and deadline panel"
+            class="gallery-image"
+            [class.is-active]="currentSlide.machinery === 2"
+          />
         </div>
 
-        <button class="gallery-nav gallery-next" type="button" data-gallery-next>&rarr;</button>
+        <button
+          class="gallery-nav gallery-next"
+          type="button"
+          (click)="changeSlide('machinery', 1)"
+        >
+          &rarr;
+        </button>
 
         <div class="gallery-dots">
-          <button type="button" class="dot is-active" data-gallery-dot="0"></button>
-          <button type="button" class="dot" data-gallery-dot="1"></button>
-          <button type="button" class="dot" data-gallery-dot="2"></button>
+          <button
+            type="button"
+            class="dot"
+            [class.is-active]="currentSlide.machinery === 0"
+            (click)="goToSlide('machinery', 0)"
+          ></button>
+          <button
+            type="button"
+            class="dot"
+            [class.is-active]="currentSlide.machinery === 1"
+            (click)="goToSlide('machinery', 1)"
+          ></button>
+          <button
+            type="button"
+            class="dot"
+            [class.is-active]="currentSlide.machinery === 2"
+            (click)="goToSlide('machinery', 2)"
+          ></button>
         </div>
       </div>
 
@@ -151,8 +217,8 @@
             procurement, and production deadlines are visible in one timeline.
           </p>
           <p>
-            For non-technical folks: think of it as a live “master schedule” that automatically
-            updates and can be shared as a neat Excel Gantt chart for meetings.
+            For non-technical folks: think of it as a live “master schedule” that
+            automatically updates and can be shared as a neat Excel Gantt chart for meetings.
           </p>
         </section>
 
@@ -184,33 +250,90 @@
 </div>
 
 <!-- Smart Reserve Modal -->
-<div class="modal" id="project-smartreserve-modal" aria-hidden="true" role="dialog" aria-labelledby="smartreserve-title">
-  <div class="modal-backdrop" data-modal-close></div>
+<div
+  class="modal"
+  [class.is-open]="openModalId === 'smartreserve'"
+  [attr.aria-hidden]="openModalId === 'smartreserve' ? 'false' : 'true'"
+  role="dialog"
+  aria-labelledby="smartreserve-title"
+>
+  <div class="modal-backdrop" (click)="closeModal()"></div>
 
   <div class="modal-dialog">
-    <button class="modal-close" type="button" aria-label="Close" data-modal-close>&times;</button>
+    <button
+      class="modal-close"
+      type="button"
+      aria-label="Close"
+      (click)="closeModal()"
+    >
+      &times;
+    </button>
 
     <header class="modal-header">
       <h3 class="modal-title" id="smartreserve-title">Smart Reserve</h3>
-      <p class="modal-subtitle">Natural language reservations for modern restaurants.</p>
+      <p class="modal-subtitle">
+        Natural language reservations for modern restaurants.
+      </p>
     </header>
 
     <div class="modal-body">
-      <div class="modal-gallery" data-gallery>
-        <button class="gallery-nav gallery-prev" type="button" data-gallery-prev>&larr;</button>
+      <div class="modal-gallery">
+        <button
+          class="gallery-nav gallery-prev"
+          type="button"
+          (click)="changeSlide('smartreserve', -1)"
+        >
+          &larr;
+        </button>
 
         <div class="gallery-frame">
-          <img src="assets/projects/smart-reserve-1.jpg" alt="Conversation UI for booking a table" class="gallery-image is-active">
-          <img src="assets/projects/smart-reserve-2.jpg" alt="Restaurant dashboard for managing bookings" class="gallery-image">
-          <img src="assets/projects/smart-reserve-3.jpg" alt="Mobile view of booking confirmation" class="gallery-image">
+          <img
+            src="assets/projects/smart-reserve-1.jpg"
+            alt="Conversation UI for booking a table"
+            class="gallery-image"
+            [class.is-active]="currentSlide.smartreserve === 0"
+          />
+          <img
+            src="assets/projects/smart-reserve-2.jpg"
+            alt="Restaurant dashboard for managing bookings"
+            class="gallery-image"
+            [class.is-active]="currentSlide.smartreserve === 1"
+          />
+          <img
+            src="assets/projects/smart-reserve-3.jpg"
+            alt="Mobile view of booking confirmation"
+            class="gallery-image"
+            [class.is-active]="currentSlide.smartreserve === 2"
+          />
         </div>
 
-        <button class="gallery-nav gallery-next" type="button" data-gallery-next>&rarr;</button>
+        <button
+          class="gallery-nav gallery-next"
+          type="button"
+          (click)="changeSlide('smartreserve', 1)"
+        >
+          &rarr;
+        </button>
 
         <div class="gallery-dots">
-          <button type="button" class="dot is-active" data-gallery-dot="0"></button>
-          <button type="button" class="dot" data-gallery-dot="1"></button>
-          <button type="button" class="dot" data-gallery-dot="2"></button>
+          <button
+            type="button"
+            class="dot"
+            [class.is-active]="currentSlide.smartreserve === 0"
+            (click)="goToSlide('smartreserve', 0)"
+          ></button>
+          <button
+            type="button"
+            class="dot"
+            [class.is-active]="currentSlide.smartreserve === 1"
+            (click)="goToSlide('smartreserve', 1)"
+          ></button>
+          <button
+            type="button"
+            class="dot"
+            [class.is-active]="currentSlide.smartreserve === 2"
+            (click)="goToSlide('smartreserve', 2)"
+          ></button>
         </div>
       </div>
 
@@ -256,11 +379,24 @@
 </div>
 
 <!-- Pet Adoption Modal -->
-<div class="modal" id="project-petadoption-modal" aria-hidden="true" role="dialog" aria-labelledby="petadoption-title">
-  <div class="modal-backdrop" data-modal-close></div>
+<div
+  class="modal"
+  [class.is-open]="openModalId === 'petadoption'"
+  [attr.aria-hidden]="openModalId === 'petadoption' ? 'false' : 'true'"
+  role="dialog"
+  aria-labelledby="petadoption-title"
+>
+  <div class="modal-backdrop" (click)="closeModal()"></div>
 
   <div class="modal-dialog">
-    <button class="modal-close" type="button" aria-label="Close" data-modal-close>&times;</button>
+    <button
+      class="modal-close"
+      type="button"
+      aria-label="Close"
+      (click)="closeModal()"
+    >
+      &times;
+    </button>
 
     <header class="modal-header">
       <h3 class="modal-title" id="petadoption-title">Pet Adoption System</h3>
@@ -268,21 +404,63 @@
     </header>
 
     <div class="modal-body">
-      <div class="modal-gallery" data-gallery>
-        <button class="gallery-nav gallery-prev" type="button" data-gallery-prev>&larr;</button>
+      <div class="modal-gallery">
+        <button
+          class="gallery-nav gallery-prev"
+          type="button"
+          (click)="changeSlide('petadoption', -1)"
+        >
+          &larr;
+        </button>
 
         <div class="gallery-frame">
-          <img src="assets/projects/pet-adoption-1.jpg" alt="Pet list with filters in the desktop app" class="gallery-image is-active">
-          <img src="assets/projects/pet-adoption-2.jpg" alt="Pet profile details and status" class="gallery-image">
-          <img src="assets/projects/pet-adoption-3.jpg" alt="Admin view connected to the Web API" class="gallery-image">
+          <img
+            src="assets/projects/pet-adoption-1.jpg"
+            alt="Pet list with filters in the desktop app"
+            class="gallery-image"
+            [class.is-active]="currentSlide.petadoption === 0"
+          />
+          <img
+            src="assets/projects/pet-adoption-2.jpg"
+            alt="Pet profile details and status"
+            class="gallery-image"
+            [class.is-active]="currentSlide.petadoption === 1"
+          />
+          <img
+            src="assets/projects/pet-adoption-3.jpg"
+            alt="Admin view connected to the Web API"
+            class="gallery-image"
+            [class.is-active]="currentSlide.petadoption === 2"
+          />
         </div>
 
-        <button class="gallery-nav gallery-next" type="button" data-gallery-next>&rarr;</button>
+        <button
+          class="gallery-nav gallery-next"
+          type="button"
+          (click)="changeSlide('petadoption', 1)"
+        >
+          &rarr;
+        </button>
 
         <div class="gallery-dots">
-          <button type="button" class="dot is-active" data-gallery-dot="0"></button>
-          <button type="button" class="dot" data-gallery-dot="1"></button>
-          <button type="button" class="dot" data-gallery-dot="2"></button>
+          <button
+            type="button"
+            class="dot"
+            [class.is-active]="currentSlide.petadoption === 0"
+            (click)="goToSlide('petadoption', 0)"
+          ></button>
+          <button
+            type="button"
+            class="dot"
+            [class.is-active]="currentSlide.petadoption === 1"
+            (click)="goToSlide('petadoption', 1)"
+          ></button>
+          <button
+            type="button"
+            class="dot"
+            [class.is-active]="currentSlide.petadoption === 2"
+            (click)="goToSlide('petadoption', 2)"
+          ></button>
         </div>
       </div>
 
@@ -323,85 +501,3 @@
     </div>
   </div>
 </div>
-
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    // ---------- OPEN MODAL ----------
-    document.addEventListener("click", function (e) {
-      const trigger = e.target.closest("[data-modal-target]");
-      if (!trigger) return;
-
-      const selector = trigger.getAttribute("data-modal-target");
-      if (!selector) return;
-
-      const modal = document.querySelector(selector);
-      if (!modal) return;
-
-      modal.classList.add("is-open");
-      modal.setAttribute("aria-hidden", "false");
-    });
-
-    // ---------- CLOSE MODAL (X button + backdrop) ----------
-    document.addEventListener("click", function (e) {
-      const isCloseBtn = e.target.matches("[data-modal-close]");
-      const isBackdrop = e.target.classList.contains("modal-backdrop");
-
-      if (!isCloseBtn && !isBackdrop) return;
-
-      const modal = e.target.closest(".modal");
-      if (!modal) return;
-
-      modal.classList.remove("is-open");
-      modal.setAttribute("aria-hidden", "true");
-    });
-
-    // ---------- ESC to close ----------
-    document.addEventListener("keydown", function (e) {
-      if (e.key !== "Escape") return;
-
-      const openModal = document.querySelector(".modal.is-open");
-      if (!openModal) return;
-
-      openModal.classList.remove("is-open");
-      openModal.setAttribute("aria-hidden", "true");
-    });
-
-    // ---------- GALLERY PER MODAL ----------
-    document.querySelectorAll(".modal-gallery").forEach(function (gallery) {
-      const images = Array.from(gallery.querySelectorAll(".gallery-image"));
-      const dots = Array.from(gallery.querySelectorAll(".dot"));
-
-      if (!images.length) return;
-
-      let index = 0;
-
-      function show(i) {
-        index = (i + images.length) % images.length;
-        images.forEach((img, idx) => img.classList.toggle("is-active", idx === index));
-        dots.forEach((dot, idx) => dot.classList.toggle("is-active", idx === index));
-      }
-
-      const prevBtn = gallery.querySelector("[data-gallery-prev]");
-      const nextBtn = gallery.querySelector("[data-gallery-next]");
-
-      if (prevBtn) {
-        prevBtn.addEventListener("click", function () {
-          show(index - 1);
-        });
-      }
-
-      if (nextBtn) {
-        nextBtn.addEventListener("click", function () {
-          show(index + 1);
-        });
-      }
-
-      dots.forEach((dot, idx) => {
-        dot.addEventListener("click", function () {
-          show(idx);
-        });
-      });
-    });
-  });
-</script>

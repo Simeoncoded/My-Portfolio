@@ -29,6 +29,7 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
 @media (min-width: 1024px) {
   .projects-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -46,14 +47,21 @@
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .project-card::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at top left, rgba(91, 134, 255, 0.24), transparent 55%);
+  background: radial-gradient(
+    circle at top left,
+    rgba(91, 134, 255, 0.24),
+    transparent 55%
+  );
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.18s ease;
@@ -121,8 +129,7 @@ figure.project-media {
 }
 
 .project-desc {
-  margin: 0 16px;
-  margin-bottom: 8px;
+  margin: 0 16px 8px;
   color: var(--muted, #9fb0c9);
   line-height: 1.5;
   font-size: 0.92rem;
@@ -166,7 +173,11 @@ figure.project-media {
   border-radius: 999px;
   text-decoration: none;
   border: 1px solid var(--border, rgba(255, 255, 255, 0.12));
-  transition: background 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  transition:
+    background 0.18s ease,
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    border-color 0.18s ease;
   font-size: 0.9rem;
   font-weight: 500;
   cursor: pointer;
@@ -181,8 +192,9 @@ figure.project-media {
 
 .btn-primary:hover {
   transform: translateY(-1px);
-  box-shadow: 0 0 0 1px rgba(91, 134, 255, 0.32),
-              0 10px 26px rgba(0, 0, 0, 0.7);
+  box-shadow:
+    0 0 0 1px rgba(91, 134, 255, 0.32),
+    0 10px 26px rgba(0, 0, 0, 0.7);
 }
 
 .btn-ghost {
@@ -304,7 +316,11 @@ video {
 
 .modal-gallery {
   position: relative;
-  background: radial-gradient(circle at top, rgba(91, 134, 255, 0.15), transparent 60%);
+  background: radial-gradient(
+    circle at top,
+    rgba(91, 134, 255, 0.15),
+    transparent 60%
+  );
   border-radius: 14px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   padding: 10px;
