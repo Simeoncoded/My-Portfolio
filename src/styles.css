@@ -192,3 +192,12 @@ a{
 
 
 
+.about_text {
+    display: block;
+  }
+  
+  .about_text p {
+    margin-bottom: 1.5rem !important;
+    line-height: 1.7;
+  }
+  
