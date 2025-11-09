@@ -1,64 +1,407 @@
 <section class="project-section" id="projects" aria-labelledby="projects-title">
-    <h2 class="section-title" id="projects-title" >Projects</h2>
-  
-    <div class="projects-grid">
-      <div class="project-card">
-        <figure class="project-media">
-          <video class="project-video" autoplay muted loop playsinline preload="none" controls>
-            <source src="video.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </figure>
-        <header class="project-head">
-          <h3 class="project-title">Machinery Schedules System</h3>
-        </header>
-        <p class="project-desc">
-          Unifies two department schedules into one source of truth. 
-          Generates digital & Excel Gantt charts automatically, and supports departmental emails plus expedited updates.
-        </p>
-        <div class="project-actions">
-          <!-- <a class="btn btn-primary" href="#" target="_blank" rel="noopener">Live Demo</a> -->
-          <a class="btn btn-ghost" href="#" target="_blank" rel="noopener">GitHub</a>
+  <h2 class="section-title" id="projects-title">Projects</h2>
+
+  <div class="projects-grid">
+    <!-- Machinery Schedules -->
+    <article class="project-card">
+      <figure class="project-media">
+        <img src="assets/projects/machinery-thumb.jpg"
+             alt="Machinery schedules dashboard with Gantt chart" />
+      </figure>
+
+      <header class="project-head">
+        <h3 class="project-title">Machinery Schedules System</h3>
+        <p class="project-subtitle">Centralized planning for Engineering, Production & Procurement.</p>
+      </header>
+
+      <p class="project-desc">
+        Unifies two department schedules into one source of truth.
+        Automatically generates digital and Excel Gantt charts, plus email notifications for deadlines.
+      </p>
+
+      <div class="project-tags">
+        <span class="tag">ASP.NET Core</span>
+        <span class="tag">SQL Server</span>
+        <span class="tag">EPPlus</span>
+        <span class="tag">DHTMLX Gantt</span>
+      </div>
+
+      <div class="project-actions">
+        <button class="btn btn-primary"
+                data-modal-target="#project-machinery-modal">
+          See details
+        </button>
+        <a class="btn btn-ghost" href="#" target="_blank" rel="noopener">
+          GitHub
+        </a>
+      </div>
+    </article>
+
+    <!-- Smart Reserve -->
+    <article class="project-card">
+      <figure class="project-media">
+        <img src="assets/projects/smart-reserve-thumb.jpg"
+             alt="Smart Reserve AI reservation interface" />
+      </figure>
+
+      <header class="project-head">
+        <h3 class="project-title">Smart Reserve</h3>
+        <p class="project-subtitle">AI-assisted restaurant reservations through natural language.</p>
+      </header>
+
+      <p class="project-desc">
+        Lets guests say things like “Book a table for 4 at 7pm tomorrow”
+        and turns that into a real reservation with conflict checks and confirmations.
+      </p>
+
+      <div class="project-tags">
+        <span class="tag">Next.js</span>
+        <span class="tag">TypeScript</span>
+        <span class="tag">.NET Web API</span>
+        <span class="tag">OpenAI</span>
+      </div>
+
+      <div class="project-actions">
+        <button class="btn btn-primary"
+                data-modal-target="#project-smartreserve-modal">
+          See details
+        </button>
+        <a class="btn btn-ghost" href="#" target="_blank" rel="noopener">
+          GitHub
+        </a>
+      </div>
+    </article>
+
+    <!-- Pet Adoption -->
+    <article class="project-card">
+      <figure class="project-media">
+        <img src="assets/projects/pet-adoption-thumb.jpg"
+             alt="Pet adoption desktop app UI" />
+      </figure>
+
+      <header class="project-head">
+        <h3 class="project-title">Pet Adoption System</h3>
+        <p class="project-subtitle">Desktop app with a live Web API backend.</p>
+      </header>
+
+      <p class="project-desc">
+        Helps staff manage pets, track statuses, and pull data from nearby
+        agencies in real time using a centralized API.
+      </p>
+
+      <div class="project-tags">
+        <span class="tag">C# Desktop</span>
+        <span class="tag">ASP.NET Core API</span>
+        <span class="tag">Entity Framework</span>
+        <span class="tag">REST</span>
+      </div>
+
+      <div class="project-actions">
+        <button class="btn btn-primary"
+                data-modal-target="#project-petadoption-modal">
+          See details
+        </button>
+        <a class="btn btn-ghost" href="#" target="_blank" rel="noopener">
+          GitHub
+        </a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ========== MODALS ========== -->
+
+<!-- Machinery Modal -->
+<div class="modal" id="project-machinery-modal" aria-hidden="true" role="dialog" aria-labelledby="machinery-title">
+  <div class="modal-backdrop" data-modal-close></div>
+
+  <div class="modal-dialog">
+    <button class="modal-close" type="button" aria-label="Close" data-modal-close>&times;</button>
+
+    <header class="modal-header">
+      <h3 class="modal-title" id="machinery-title">Machinery Schedules System</h3>
+      <p class="modal-subtitle">Making deadlines visible for Engineering, Production, and Procurement.</p>
+    </header>
+
+    <div class="modal-body">
+      <div class="modal-gallery" data-gallery>
+        <button class="gallery-nav gallery-prev" type="button" data-gallery-prev>&larr;</button>
+
+        <div class="gallery-frame">
+          <img src="assets/projects/machinery-1.jpg" alt="Combined Gantt schedule view" class="gallery-image is-active">
+          <img src="assets/projects/machinery-2.jpg" alt="Excel Gantt export sample" class="gallery-image">
+          <img src="assets/projects/machinery-3.jpg" alt="Machine detail and deadline panel" class="gallery-image">
         </div>
-    </div>
-  
-      <div class="project-card">
-        <figure class="project-media">
-            <!-- poster="assets/posters/smart-reserve.jpg" -->
-          <video class="project-video" autoplay muted loop playsinline preload="none" controls>
-            <source src="video.mp4" type="video/mp4" />
-          </video>
-        </figure>
-        <header class="project-head">
-          <h3 class="project-title">Smart Reserve</h3>
-        </header>
-        <p class="project-desc">
-          AI-assisted restaurant reservations via natural language. “Book a table for 4 at 7pm tomorrow.” 
-          v1 is wrapping up for early user testing.
-        </p>
-        <div class="project-actions">
-            <!-- <a class="btn btn-primary" href="#" target="_blank" rel="noopener">Live Demo</a> -->
-            <a class="btn btn-ghost" href="#" target="_blank" rel="noopener">GitHub</a>
+
+        <button class="gallery-nav gallery-next" type="button" data-gallery-next>&rarr;</button>
+
+        <div class="gallery-dots">
+          <button type="button" class="dot is-active" data-gallery-dot="0"></button>
+          <button type="button" class="dot" data-gallery-dot="1"></button>
+          <button type="button" class="dot" data-gallery-dot="2"></button>
+        </div>
+      </div>
+
+      <div class="modal-content">
+        <section class="modal-section">
+          <h4>Project Overview</h4>
+          <p>
+            This system replaces disconnected Excel files used by multiple departments.
+            It creates a single, centralized schedule where each machine’s engineering,
+            procurement, and production deadlines are visible in one timeline.
+          </p>
+          <p>
+            For non-technical folks: think of it as a live “master schedule” that automatically
+            updates and can be shared as a neat Excel Gantt chart for meetings.
+          </p>
+        </section>
+
+        <section class="modal-section">
+          <h4>What it does</h4>
+          <ul>
+            <li>Combines engineering and operations schedules into one view.</li>
+            <li>Generates digital Gantt charts for day-to-day tracking.</li>
+            <li>Exports clean Excel reports for managers and clients.</li>
+            <li>Sends reminder emails before and after missed deadlines.</li>
+          </ul>
+        </section>
+
+        <section class="modal-section">
+          <h4>Tech & Skills</h4>
+          <div class="pill-row">
+            <span class="pill">ASP.NET Core MVC</span>
+            <span class="pill">C#</span>
+            <span class="pill">SQL Server</span>
+            <span class="pill">Entity Framework Core</span>
+            <span class="pill">EPPlus (Excel)</span>
+            <span class="pill">DHTMLX Gantt</span>
+            <span class="pill">Bootstrap</span>
           </div>
+        </section>
+      </div>
     </div>
-  
-      <div class="project-card">
-        <figure class="project-media">
-          <video class="project-video" autoplay muted loop playsinline preload="none" controls>
-            <source src="video.mp4" type="video/mp4" />
-          </video>
-        </figure>
-        <header class="project-head">
-          <h3 class="project-title">Pet Adoption System</h3>
-        </header>
-        <p class="project-desc">
-          Desktop app backed by an ASP.NET Core Web API. Manage pets and browse nearby adoption agencies in real time.
-        </p>
-        <div class="project-actions">
-            <!-- <a class="btn btn-primary" href="#" target="_blank" rel="noopener">Live Demo</a> -->
-            <a class="btn btn-ghost" href="#" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</div>
+
+<!-- Smart Reserve Modal -->
+<div class="modal" id="project-smartreserve-modal" aria-hidden="true" role="dialog" aria-labelledby="smartreserve-title">
+  <div class="modal-backdrop" data-modal-close></div>
+
+  <div class="modal-dialog">
+    <button class="modal-close" type="button" aria-label="Close" data-modal-close>&times;</button>
+
+    <header class="modal-header">
+      <h3 class="modal-title" id="smartreserve-title">Smart Reserve</h3>
+      <p class="modal-subtitle">Natural language reservations for modern restaurants.</p>
+    </header>
+
+    <div class="modal-body">
+      <div class="modal-gallery" data-gallery>
+        <button class="gallery-nav gallery-prev" type="button" data-gallery-prev>&larr;</button>
+
+        <div class="gallery-frame">
+          <img src="assets/projects/smart-reserve-1.jpg" alt="Conversation UI for booking a table" class="gallery-image is-active">
+          <img src="assets/projects/smart-reserve-2.jpg" alt="Restaurant dashboard for managing bookings" class="gallery-image">
+          <img src="assets/projects/smart-reserve-3.jpg" alt="Mobile view of booking confirmation" class="gallery-image">
+        </div>
+
+        <button class="gallery-nav gallery-next" type="button" data-gallery-next>&rarr;</button>
+
+        <div class="gallery-dots">
+          <button type="button" class="dot is-active" data-gallery-dot="0"></button>
+          <button type="button" class="dot" data-gallery-dot="1"></button>
+          <button type="button" class="dot" data-gallery-dot="2"></button>
+        </div>
+      </div>
+
+      <div class="modal-content">
+        <section class="modal-section">
+          <h4>Project Overview</h4>
+          <p>
+            Smart Reserve lets customers talk to the system like they would talk to a host:
+            “Book a table for 4 at 7pm tomorrow” — and the app handles availability, time,
+            and confirmation automatically.
+          </p>
+          <p>
+            For clients: it reduces phone calls, speeds up bookings, and gives you a more
+            modern first impression without replacing your existing reservation tools.
+          </p>
+        </section>
+
+        <section class="modal-section">
+          <h4>What it does</h4>
+          <ul>
+            <li>Accepts free-text messages and extracts date, time, party size, and notes.</li>
+            <li>Checks for availability and conflicts on the backend.</li>
+            <li>Sends a structured confirmation back to the guest.</li>
+            <li>Provides an internal dashboard for staff to review and adjust bookings.</li>
+          </ul>
+        </section>
+
+        <section class="modal-section">
+          <h4>Tech & Skills</h4>
+          <div class="pill-row">
+            <span class="pill">Next.js</span>
+            <span class="pill">TypeScript</span>
+            <span class="pill">React Query</span>
+            <span class="pill">Tailwind CSS</span>
+            <span class="pill">.NET Web API</span>
+            <span class="pill">OpenAI API</span>
+            <span class="pill">JWT Auth</span>
           </div>
+        </section>
+      </div>
     </div>
+  </div>
+</div>
+
+<!-- Pet Adoption Modal -->
+<div class="modal" id="project-petadoption-modal" aria-hidden="true" role="dialog" aria-labelledby="petadoption-title">
+  <div class="modal-backdrop" data-modal-close></div>
+
+  <div class="modal-dialog">
+    <button class="modal-close" type="button" aria-label="Close" data-modal-close>&times;</button>
+
+    <header class="modal-header">
+      <h3 class="modal-title" id="petadoption-title">Pet Adoption System</h3>
+      <p class="modal-subtitle">Helping the right pet find the right home faster.</p>
+    </header>
+
+    <div class="modal-body">
+      <div class="modal-gallery" data-gallery>
+        <button class="gallery-nav gallery-prev" type="button" data-gallery-prev>&larr;</button>
+
+        <div class="gallery-frame">
+          <img src="assets/projects/pet-adoption-1.jpg" alt="Pet list with filters in the desktop app" class="gallery-image is-active">
+          <img src="assets/projects/pet-adoption-2.jpg" alt="Pet profile details and status" class="gallery-image">
+          <img src="assets/projects/pet-adoption-3.jpg" alt="Admin view connected to the Web API" class="gallery-image">
+        </div>
+
+        <button class="gallery-nav gallery-next" type="button" data-gallery-next>&rarr;</button>
+
+        <div class="gallery-dots">
+          <button type="button" class="dot is-active" data-gallery-dot="0"></button>
+          <button type="button" class="dot" data-gallery-dot="1"></button>
+          <button type="button" class="dot" data-gallery-dot="2"></button>
+        </div>
+      </div>
+
+      <div class="modal-content">
+        <section class="modal-section">
+          <h4>Project Overview</h4>
+          <p>
+            A desktop application for shelter staff to manage animals, track adoption status,
+            and stay in sync with a central Web API.
+          </p>
+          <p>
+            In simple terms: staff see one clear list of all pets, their history, and whether they’re
+            ready for adoption, reserved, or already adopted.
+          </p>
+        </section>
+
+        <section class="modal-section">
+          <h4>What it does</h4>
+          <ul>
+            <li>Registers new animals with photos, age, breed, and health notes.</li>
+            <li>Tracks adoption progress and current status.</li>
+            <li>Connects to an ASP.NET Core Web API for shared data across branches.</li>
+            <li>Provides filters and search to quickly find suitable pets for families.</li>
+          </ul>
+        </section>
+
+        <section class="modal-section">
+          <h4>Tech & Skills</h4>
+          <div class="pill-row">
+            <span class="pill">C# Desktop (WPF / UWP / WinForms)</span>
+            <span class="pill">ASP.NET Core Web API</span>
+            <span class="pill">Entity Framework Core</span>
+            <span class="pill">SQL</span>
+            <span class="pill">RESTful Design</span>
+          </div>
+        </section>
+      </div>
     </div>
-  </section>
-  
+  </div>
+</div>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // ---------- OPEN MODAL ----------
+    document.addEventListener("click", function (e) {
+      const trigger = e.target.closest("[data-modal-target]");
+      if (!trigger) return;
+
+      const selector = trigger.getAttribute("data-modal-target");
+      if (!selector) return;
+
+      const modal = document.querySelector(selector);
+      if (!modal) return;
+
+      modal.classList.add("is-open");
+      modal.setAttribute("aria-hidden", "false");
+    });
+
+    // ---------- CLOSE MODAL (X button + backdrop) ----------
+    document.addEventListener("click", function (e) {
+      const isCloseBtn = e.target.matches("[data-modal-close]");
+      const isBackdrop = e.target.classList.contains("modal-backdrop");
+
+      if (!isCloseBtn && !isBackdrop) return;
+
+      const modal = e.target.closest(".modal");
+      if (!modal) return;
+
+      modal.classList.remove("is-open");
+      modal.setAttribute("aria-hidden", "true");
+    });
+
+    // ---------- ESC to close ----------
+    document.addEventListener("keydown", function (e) {
+      if (e.key !== "Escape") return;
+
+      const openModal = document.querySelector(".modal.is-open");
+      if (!openModal) return;
+
+      openModal.classList.remove("is-open");
+      openModal.setAttribute("aria-hidden", "true");
+    });
+
+    // ---------- GALLERY PER MODAL ----------
+    document.querySelectorAll(".modal-gallery").forEach(function (gallery) {
+      const images = Array.from(gallery.querySelectorAll(".gallery-image"));
+      const dots = Array.from(gallery.querySelectorAll(".dot"));
+
+      if (!images.length) return;
+
+      let index = 0;
+
+      function show(i) {
+        index = (i + images.length) % images.length;
+        images.forEach((img, idx) => img.classList.toggle("is-active", idx === index));
+        dots.forEach((dot, idx) => dot.classList.toggle("is-active", idx === index));
+      }
+
+      const prevBtn = gallery.querySelector("[data-gallery-prev]");
+      const nextBtn = gallery.querySelector("[data-gallery-next]");
+
+      if (prevBtn) {
+        prevBtn.addEventListener("click", function () {
+          show(index - 1);
+        });
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener("click", function () {
+          show(index + 1);
+        });
+      }
+
+      dots.forEach((dot, idx) => {
+        dot.addEventListener("click", function () {
+          show(idx);
+        });
+      });
+    });
+  });
+</script>
