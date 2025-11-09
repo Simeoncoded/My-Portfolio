@@ -194,10 +194,28 @@ a{
 
 .about_text {
     display: block;
+    max-width: 800px;
   }
   
   .about_text p {
     margin-bottom: 1.5rem !important;
     line-height: 1.7;
+  }
+  
+  .about {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; /* space between text and buttons */
+  }
+
+  .about_actions {
+    display: flex;
+    justify-content: flex-end; /* pushes buttons to the right */
+    gap: 12px; /* space between buttons */
+  }
+  
+  .about_actions .btn {
+    font-size: 15px;
+    cursor: pointer;
   }
   
