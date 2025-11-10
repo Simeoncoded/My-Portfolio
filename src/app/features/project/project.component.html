@@ -6,9 +6,18 @@
     <article class="project-card">
       <figure class="project-media">
         <img
-        src="gantt1.JPG"
-        alt="Machinery schedules dashboard with Gantt chart"
-      />
+          src="gantt1.JPG"
+          alt="Machinery schedules dashboard "
+        />
+        <!-- Hover eye overlay -> opens image preview modal -->
+        <button
+          type="button"
+          class="image-overlay"
+          (click)="openImagePreview('gantt1.JPG', 'Machinery schedules dashboard'); $event.stopPropagation()"
+          aria-label="View full image"
+        >
+          <span class="eye-icon">👁</span>
+        </button>
       </figure>
 
       <header class="project-head">
@@ -47,6 +56,14 @@
           src="res1.JPG"
           alt="Smart Reserve AI reservation interface"
         />
+        <button
+          type="button"
+          class="image-overlay"
+          (click)="openImagePreview('res1.JPG', 'Smart Reserve AI reservation interface'); $event.stopPropagation()"
+          aria-label="View full image"
+        >
+          <span class="eye-icon">👁</span>
+        </button>
       </figure>
 
       <header class="project-head">
@@ -85,6 +102,14 @@
           src="pet1.JPG"
           alt="Pet adoption desktop app UI"
         />
+        <button
+          type="button"
+          class="image-overlay"
+          (click)="openImagePreview('pet1.JPG', 'Pet adoption desktop app UI'); $event.stopPropagation()"
+          aria-label="View full image"
+        >
+          <span class="eye-icon">👁</span>
+        </button>
       </figure>
 
       <header class="project-head">
@@ -116,7 +141,7 @@
   </div>
 </section>
 
-<!-- ========== MODALS ========== -->
+<!-- ========== PROJECT MODALS ========== -->
 
 <!-- Machinery Modal -->
 <div
@@ -176,6 +201,16 @@
             class="gallery-image"
             [class.is-active]="currentSlide.machinery === 2"
           />
+
+          <!-- Eye overlay -> preview current slide -->
+          <button
+            type="button"
+            class="image-overlay"
+            (click)="openImagePreview(getActiveImage('machinery'), ''); $event.stopPropagation()"
+            aria-label="View full image"
+          >
+            <span class="eye-icon">👁</span>
+          </button>
         </div>
 
         <button
@@ -305,6 +340,15 @@
             class="gallery-image"
             [class.is-active]="currentSlide.smartreserve === 2"
           />
+
+          <button
+            type="button"
+            class="image-overlay"
+            (click)="openImagePreview(getActiveImage('smartreserve'), ''); $event.stopPropagation()"
+            aria-label="View full image"
+          >
+            <span class="eye-icon">👁</span>
+          </button>
         </div>
 
         <button
@@ -364,13 +408,13 @@
         <section class="modal-section">
           <h4>Tech & Skills</h4>
           <div class="pill-row">
-            <span class="pill">Next.js</span>
+            <span class="pill">ASP.NET Core MVC</span>
             <span class="pill">TypeScript</span>
             <span class="pill">React Query</span>
             <span class="pill">Tailwind CSS</span>
-            <span class="pill">.NET Web API</span>
+            <span class="pill">ASP.NET Core Web API</span>
             <span class="pill">OpenAI API</span>
-            <span class="pill">JWT Auth</span>
+            <span class="pill">Razor</span>
           </div>
         </section>
       </div>
@@ -415,23 +459,32 @@
 
         <div class="gallery-frame">
           <img
-            src="assets/projects/pet-adoption-1.jpg"
+            src="pet2.JPG"
             alt="Pet list with filters in the desktop app"
             class="gallery-image"
             [class.is-active]="currentSlide.petadoption === 0"
           />
           <img
-            src="assets/projects/pet-adoption-2.jpg"
+            src="pet3.JPG"
             alt="Pet profile details and status"
             class="gallery-image"
             [class.is-active]="currentSlide.petadoption === 1"
           />
           <img
-            src="assets/projects/pet-adoption-3.jpg"
+            src="pet4.JPG"
             alt="Admin view connected to the Web API"
             class="gallery-image"
             [class.is-active]="currentSlide.petadoption === 2"
           />
+
+          <button
+            type="button"
+            class="image-overlay"
+            (click)="openImagePreview(getActiveImage('petadoption'), ''); $event.stopPropagation()"
+            aria-label="View full image"
+          >
+            <span class="eye-icon">👁</span>
+          </button>
         </div>
 
         <button
@@ -480,7 +533,7 @@
         <section class="modal-section">
           <h4>What it does</h4>
           <ul>
-            <li>Registers new animals with photos, age, breed, and health notes.</li>
+            <li>Registers new animals with, age, breed, and health notes.</li>
             <li>Tracks adoption progress and current status.</li>
             <li>Connects to an ASP.NET Core Web API for shared data across branches.</li>
             <li>Provides filters and search to quickly find suitable pets for families.</li>
@@ -499,5 +552,37 @@
         </section>
       </div>
     </div>
+  </div>
+</div>
+
+<!-- ========== GLOBAL IMAGE PREVIEW MODAL (LIGHTBOX) ========== -->
+
+<div
+  class="image-modal"
+  *ngIf="isImagePreviewOpen"
+  role="dialog"
+  aria-modal="true"
+>
+  <div class="image-modal-backdrop" (click)="closeImagePreview()"></div>
+
+  <div class="image-modal-dialog">
+    <button
+      class="image-modal-close"
+      type="button"
+      aria-label="Close"
+      (click)="closeImagePreview()"
+    >
+      &times;
+    </button>
+
+    <img
+      *ngIf="previewSrc"
+      [src]="previewSrc"
+      [alt]="previewAlt || 'Project image preview'"
+    />
+
+    <p class="image-modal-caption" *ngIf="previewAlt">
+      {{ previewAlt }}
+    </p>
   </div>
 </div>
