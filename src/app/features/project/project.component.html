@@ -13,7 +13,7 @@
         <button
           type="button"
           class="image-overlay"
-          (click)="openImagePreview('gantt1.JPG', 'Machinery schedules dashboard'); $event.stopPropagation()"
+          (click)="openImagePreview('gantt1.JPG', ''); $event.stopPropagation()"
           aria-label="View full image"
         >
           <span class="eye-icon">👁</span>
@@ -64,7 +64,7 @@
         <button
           type="button"
           class="image-overlay"
-          (click)="openImagePreview('res1.JPG', 'Smart Reserve AI reservation interface'); $event.stopPropagation()"
+          (click)="openImagePreview('res1.JPG', ''); $event.stopPropagation()"
           aria-label="View full image"
         >
           <span class="eye-icon">👁</span>
@@ -115,7 +115,7 @@
         <button
           type="button"
           class="image-overlay"
-          (click)="openImagePreview('pet1.JPG', 'Pet adoption desktop app UI'); $event.stopPropagation()"
+          (click)="openImagePreview('pet1.JPG', ''); $event.stopPropagation()"
           aria-label="View full image"
         >
           <span class="eye-icon">👁</span>
@@ -164,7 +164,7 @@
         <button
           type="button"
           class="image-overlay"
-          (click)="openImagePreview('pay1.JPG', 'Employee payroll system interface'); $event.stopPropagation()"
+          (click)="openImagePreview('emp1.JPG', ''); $event.stopPropagation()"
           aria-label="View full image"
         >
           <span class="eye-icon">👁</span>
@@ -185,10 +185,9 @@
       </p>
 
       <div class="project-tags">
+        <span class="tag">C#</span>
         <span class="tag">OOP</span>
-        <span class="tag">Class Hierarchy</span>
-        <span class="tag">Inheritance &amp; Polymorphism</span>
-        <span class="tag">Encapsulation</span>
+        <span class="tag">Universal Windows Platform</span>
       </div>
 
       <div class="project-actions">
@@ -197,7 +196,7 @@
         </button>
         <a
           class="btn btn-ghost"
-          href="#"
+          href="https://github.com/Simeoncoded/Employee-Payroll-System"
           target="_blank"
           rel="noopener"
         >
@@ -216,7 +215,7 @@
         <button
           type="button"
           class="image-overlay"
-          (click)="openImagePreview('todo1.JPG', 'Java to-do list desktop app interface'); $event.stopPropagation()"
+          (click)="openImagePreview('java1.JPG', ''); $event.stopPropagation()"
           aria-label="View full image"
         >
           <span class="eye-icon">👁</span>
@@ -249,7 +248,7 @@
         </button>
         <a
           class="btn btn-ghost"
-          href="#"
+          href="https://github.com/Simeoncoded/Java-ToDo"
           target="_blank"
           rel="noopener"
         >
@@ -325,7 +324,7 @@
           <button
             type="button"
             class="image-overlay"
-            (click)="openImagePreview(getActiveImage('machinery'), 'Machinery schedules screen'); $event.stopPropagation()"
+            (click)="openImagePreview(getActiveImage('machinery'), ''); $event.stopPropagation()"
             aria-label="View full image"
           >
             <span class="eye-icon">👁</span>
@@ -463,7 +462,7 @@
           <button
             type="button"
             class="image-overlay"
-            (click)="openImagePreview(getActiveImage('smartreserve'), 'Smart Reserve screen'); $event.stopPropagation()"
+            (click)="openImagePreview(getActiveImage('smartreserve'), ''); $event.stopPropagation()"
             aria-label="View full image"
           >
             <span class="eye-icon">👁</span>
@@ -599,7 +598,7 @@
           <button
             type="button"
             class="image-overlay"
-            (click)="openImagePreview(getActiveImage('petadoption'), 'Pet adoption screen'); $event.stopPropagation()"
+            (click)="openImagePreview(getActiveImage('petadoption'), ''); $event.stopPropagation()"
             aria-label="View full image"
           >
             <span class="eye-icon">👁</span>
@@ -734,7 +733,7 @@
           <button
             type="button"
             class="image-overlay"
-            (click)="openImagePreview(getActiveImage('payroll'), 'Employee payroll system screen'); $event.stopPropagation()"
+            (click)="openImagePreview(getActiveImage('payroll'), ''); $event.stopPropagation()"
             aria-label="View full image"
           >
             <span class="eye-icon">👁</span>
@@ -798,10 +797,9 @@
         <section class="modal-section">
           <h4>Tech & Skills</h4>
           <div class="pill-row">
-            <span class="pill">Object-Oriented Programming</span>
-            <span class="pill">Class Hierarchy Design</span>
-            <span class="pill">Inheritance &amp; Polymorphism</span>
-            <span class="pill">Encapsulation</span>
+            <span class="pill">C#</span>
+            <span class="pill">OOP</span>
+            <span class="pill">Universal Windows Platform</span>
           </div>
         </section>
       </div>
@@ -869,7 +867,7 @@
           <button
             type="button"
             class="image-overlay"
-            (click)="openImagePreview(getActiveImage('todolist'), 'Java To-Do List screen'); $event.stopPropagation()"
+            (click)="openImagePreview(getActiveImage('todolist'), ''); $event.stopPropagation()"
             aria-label="View full image"
           >
             <span class="eye-icon">👁</span>
@@ -962,7 +960,7 @@
     >
       &times;
     </button>
-
+ 
     <img
       *ngIf="previewSrc"
       [src]="previewSrc"

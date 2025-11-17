@@ -22,13 +22,15 @@ export class ProjectComponent {
     todolist: 0
   };
 
-  // Map of images per modal for gallery preview (use your actual file paths)
+  // Map of images per modal for gallery preview (MUST match your HTML src values)
   private imageMap: Record<ModalId, string[]> = {
     machinery: ['gantt3.JPG', 'gantt4.JPG', 'gantt2.JPG'],
     smartreserve: ['res2.JPG', 'res3.JPG', 'res4.JPG'],
     petadoption: ['pet2.JPG', 'pet3.JPG', 'pet4.JPG'],
-    payroll: ['pay1.JPG', 'pay2.JPG', 'pay3.JPG'],
-    todolist: ['todo1.JPG', 'todo2.JPG', 'todo3.JPG']
+    // 👇 match these to emp2/3/4 in your payroll modal
+    payroll: ['emp2.JPG', 'emp3.JPG', 'emp4.JPG'],
+    // 👇 match these to java2/3/4 in your todo modal
+    todolist: ['java2.JPG', 'java3.JPG', 'java4.JPG']
   };
 
   // Global image preview modal state
