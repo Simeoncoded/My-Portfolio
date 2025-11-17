@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, HostListener } from '@angular/core';
 
-type ModalId = 'machinery' | 'smartreserve' | 'petadoption';
+type ModalId = 'machinery' | 'smartreserve' | 'petadoption' | 'todolist';
 
 @Component({
   selector: 'app-project',
@@ -17,14 +17,16 @@ export class ProjectComponent {
   currentSlide: Record<ModalId, number> = {
     machinery: 0,
     smartreserve: 0,
-    petadoption: 0
+    petadoption: 0,
+    todolist: 0
   };
 
   // Map of images per modal for gallery preview (use your actual file paths)
   private imageMap: Record<ModalId, string[]> = {
     machinery: ['gantt3.JPG', 'gantt4.JPG', 'gantt2.JPG'],
     smartreserve: ['res2.JPG', 'res3.JPG', 'res4.JPG'],
-    petadoption: ['pet2.JPG', 'pet3.JPG', 'pet4.JPG']
+    petadoption: ['pet2.JPG', 'pet3.JPG', 'pet4.JPG'],
+    todolist: ['todo1.JPG', 'todo2.JPG', 'todo3.JPG']
   };
 
   // Global image preview modal state

@@ -7,7 +7,7 @@
       <figure class="project-media">
         <img
           src="gantt1.JPG"
-          alt="Machinery schedules dashboard "
+          alt="Machinery schedules dashboard"
         />
         <!-- Hover eye overlay -> opens image preview modal -->
         <button
@@ -43,7 +43,12 @@
         <button class="btn btn-primary" (click)="openModal('machinery')">
           See details
         </button>
-        <a class="btn btn-ghost" href="https://github.com/Simeoncoded/Haver-new" target="_blank" rel="noopener">
+        <a
+          class="btn btn-ghost"
+          href="https://github.com/Simeoncoded/Haver-new"
+          target="_blank"
+          rel="noopener"
+        >
           GitHub
         </a>
       </div>
@@ -89,7 +94,12 @@
         <button class="btn btn-primary" (click)="openModal('smartreserve')">
           See details
         </button>
-        <a class="btn btn-ghost" href="https://github.com/Simeoncoded/Restaurant-Reservation-System" target="_blank" rel="noopener">
+        <a
+          class="btn btn-ghost"
+          href="https://github.com/Simeoncoded/Restaurant-Reservation-System"
+          target="_blank"
+          rel="noopener"
+        >
           GitHub
         </a>
       </div>
@@ -133,7 +143,63 @@
         <button class="btn btn-primary" (click)="openModal('petadoption')">
           See details
         </button>
-        <a class="btn btn-ghost" href="https://github.com/Simeoncoded/Pet-Adoption-App" target="_blank" rel="noopener">
+        <a
+          class="btn btn-ghost"
+          href="https://github.com/Simeoncoded/Pet-Adoption-App"
+          target="_blank"
+          rel="noopener"
+        >
+          GitHub
+        </a>
+      </div>
+    </article>
+
+    <!-- Java To-Do List (NEW) -->
+    <article class="project-card">
+      <figure class="project-media">
+        <img
+          src="todo1.JPG"
+          alt="Java to-do list desktop app interface"
+        />
+        <button
+          type="button"
+          class="image-overlay"
+          (click)="openImagePreview('todo1.JPG', 'Java to-do list desktop app interface'); $event.stopPropagation()"
+          aria-label="View full image"
+        >
+          <span class="eye-icon">👁</span>
+        </button>
+      </figure>
+
+      <header class="project-head">
+        <h3 class="project-title">Java To-Do List Manager</h3>
+        <p class="project-subtitle">
+          Desktop productivity app built with Java and JavaFX.
+        </p>
+      </header>
+
+      <p class="project-desc">
+        A simple task manager that lets users create, update, and complete tasks
+        with optional deadlines and filters for active/completed tasks.
+      </p>
+
+      <div class="project-tags">
+        <span class="tag">Java</span>
+        <span class="tag">JavaFX</span>
+        <span class="tag">SQLite / File I/O</span>
+        <span class="tag">OOP</span>
+      </div>
+
+      <div class="project-actions">
+        <button class="btn btn-primary" (click)="openModal('todolist')">
+          See details
+        </button>
+        <a
+          class="btn btn-ghost"
+          href="#"
+          target="_blank"
+          rel="noopener"
+        >
           GitHub
         </a>
       </div>
@@ -206,7 +272,7 @@
           <button
             type="button"
             class="image-overlay"
-            (click)="openImagePreview(getActiveImage('machinery'), ''); $event.stopPropagation()"
+            (click)="openImagePreview(getActiveImage('machinery'), 'Machinery schedules screen'); $event.stopPropagation()"
             aria-label="View full image"
           >
             <span class="eye-icon">👁</span>
@@ -344,7 +410,7 @@
           <button
             type="button"
             class="image-overlay"
-            (click)="openImagePreview(getActiveImage('smartreserve'), ''); $event.stopPropagation()"
+            (click)="openImagePreview(getActiveImage('smartreserve'), 'Smart Reserve screen'); $event.stopPropagation()"
             aria-label="View full image"
           >
             <span class="eye-icon">👁</span>
@@ -480,7 +546,7 @@
           <button
             type="button"
             class="image-overlay"
-            (click)="openImagePreview(getActiveImage('petadoption'), ''); $event.stopPropagation()"
+            (click)="openImagePreview(getActiveImage('petadoption'), 'Pet adoption screen'); $event.stopPropagation()"
             aria-label="View full image"
           >
             <span class="eye-icon">👁</span>
@@ -533,7 +599,7 @@
         <section class="modal-section">
           <h4>What it does</h4>
           <ul>
-            <li>Registers new animals with, age, breed, and health notes.</li>
+            <li>Registers new animals with age, breed, and health notes.</li>
             <li>Tracks adoption progress and current status.</li>
             <li>Connects to an ASP.NET Core Web API for shared data across branches.</li>
             <li>Provides filters and search to quickly find suitable pets for families.</li>
@@ -555,8 +621,142 @@
   </div>
 </div>
 
-<!-- ========== GLOBAL IMAGE PREVIEW MODAL (LIGHTBOX) ========== -->
+<!-- Java To-Do List Modal -->
+<div
+  class="modal"
+  [class.is-open]="openModalId === 'todolist'"
+  [attr.aria-hidden]="openModalId === 'todolist' ? 'false' : 'true'"
+  role="dialog"
+  aria-labelledby="todolist-title"
+>
+  <div class="modal-backdrop" (click)="closeModal()"></div>
 
+  <div class="modal-dialog">
+    <button
+      class="modal-close"
+      type="button"
+      aria-label="Close"
+      (click)="closeModal()"
+    >
+      &times;
+    </button>
+
+    <header class="modal-header">
+      <h3 class="modal-title" id="todolist-title">Java To-Do List Manager</h3>
+      <p class="modal-subtitle">
+        A focused desktop task manager built with Java and JavaFX.
+      </p>
+    </header>
+
+    <div class="modal-body">
+      <div class="modal-gallery">
+        <button
+          class="gallery-nav gallery-prev"
+          type="button"
+          (click)="changeSlide('todolist', -1)"
+        >
+          &larr;
+        </button>
+
+        <div class="gallery-frame">
+          <img
+            src="todo1.JPG"
+            alt="Main task list view"
+            class="gallery-image"
+            [class.is-active]="currentSlide.todolist === 0"
+          />
+          <img
+            src="todo2.JPG"
+            alt="Task creation/edit form"
+            class="gallery-image"
+            [class.is-active]="currentSlide.todolist === 1"
+          />
+          <img
+            src="todo3.JPG"
+            alt="Tasks filtered by completed status"
+            class="gallery-image"
+            [class.is-active]="currentSlide.todolist === 2"
+          />
+
+          <button
+            type="button"
+            class="image-overlay"
+            (click)="openImagePreview(getActiveImage('todolist'), 'Java To-Do List screen'); $event.stopPropagation()"
+            aria-label="View full image"
+          >
+            <span class="eye-icon">👁</span>
+          </button>
+        </div>
+
+        <button
+          class="gallery-nav gallery-next"
+          type="button"
+          (click)="changeSlide('todolist', 1)"
+        >
+          &rarr;
+        </button>
+
+        <div class="gallery-dots">
+          <button
+            type="button"
+            class="dot"
+            [class.is-active]="currentSlide.todolist === 0"
+            (click)="goToSlide('todolist', 0)"
+          ></button>
+          <button
+            type="button"
+            class="dot"
+            [class.is-active]="currentSlide.todolist === 1"
+            (click)="goToSlide('todolist', 1)"
+          ></button>
+          <button
+            type="button"
+            class="dot"
+            [class.is-active]="currentSlide.todolist === 2"
+            (click)="goToSlide('todolist', 2)"
+          ></button>
+        </div>
+      </div>
+
+      <div class="modal-content">
+        <section class="modal-section">
+          <h4>Project Overview</h4>
+          <p>
+            A lightweight desktop app that helps users keep track of daily tasks. It supports
+            adding new tasks, editing existing ones, marking them as done, and optionally
+            assigning due dates.
+          </p>
+          <p>
+            It’s designed as a clean Java OOP project with a clear separation between the UI
+            and the task management logic.
+          </p>
+        </section>
+
+        <section class="modal-section">
+          <h4>What it does</h4>
+          <ul>
+            <li>Add, edit, and delete tasks.</li>
+            <li>Mark tasks as completed or active.</li>
+            <li>Filter views by All, Active, or Completed.</li>
+            <li>Persist tasks locally using SQLite or file storage.</li>
+          </ul>
+        </section>
+
+        <section class="modal-section">
+          <h4>Tech & Skills</h4>
+          <div class="pill-row">
+            <span class="pill">Java</span>
+            <span class="pill">JavaFX / Swing</span>
+            <span class="pill">SQLite / File I/O</span>
+            <span class="pill">OOP & MVC</span>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Global image preview modal -->
 <div
   class="image-modal"
   *ngIf="isImagePreviewOpen"
