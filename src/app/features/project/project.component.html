@@ -154,11 +154,63 @@
       </div>
     </article>
 
-    <!-- Java To-Do List (NEW) -->
+    <!-- Employee Payroll System (NEW) -->
     <article class="project-card">
       <figure class="project-media">
         <img
-          src="todo1.JPG"
+          src="emp1.JPG"
+          alt="Employee payroll system interface"
+        />
+        <button
+          type="button"
+          class="image-overlay"
+          (click)="openImagePreview('pay1.JPG', 'Employee payroll system interface'); $event.stopPropagation()"
+          aria-label="View full image"
+        >
+          <span class="eye-icon">👁</span>
+        </button>
+      </figure>
+
+      <header class="project-head">
+        <h3 class="project-title">Employee Payroll System</h3>
+        <p class="project-subtitle">
+          OOP-based payroll app backed by a class hierarchy.
+        </p>
+      </header>
+
+      <p class="project-desc">
+        An application that calculates employee pay based on their role and hours,
+        built on a class hierarchy (e.g., FullTime, PartTime, Contractor) using
+        inheritance, polymorphism, and encapsulation.
+      </p>
+
+      <div class="project-tags">
+        <span class="tag">OOP</span>
+        <span class="tag">Class Hierarchy</span>
+        <span class="tag">Inheritance &amp; Polymorphism</span>
+        <span class="tag">Encapsulation</span>
+      </div>
+
+      <div class="project-actions">
+        <button class="btn btn-primary" (click)="openModal('payroll')">
+          See details
+        </button>
+        <a
+          class="btn btn-ghost"
+          href="#"
+          target="_blank"
+          rel="noopener"
+        >
+          GitHub
+        </a>
+      </div>
+    </article>
+
+    <!-- Java To-Do List (UPDATED TEXT) -->
+    <article class="project-card">
+      <figure class="project-media">
+        <img
+          src="java1.JPG"
           alt="Java to-do list desktop app interface"
         />
         <button
@@ -174,20 +226,21 @@
       <header class="project-head">
         <h3 class="project-title">Java To-Do List Manager</h3>
         <p class="project-subtitle">
-          Desktop productivity app built with Java and JavaFX.
+          Desktop task manager built with Java Swing &amp; AWT.
         </p>
       </header>
 
       <p class="project-desc">
-        A simple task manager that lets users create, update, and complete tasks
-        with optional deadlines and filters for active/completed tasks.
+        A simple productivity app that lets users create, update, and complete tasks,
+        implemented with Java, Swing, AWT, and a persistence layer using File I/O and
+        a small database for saving task data.
       </p>
 
       <div class="project-tags">
         <span class="tag">Java</span>
-        <span class="tag">JavaFX</span>
-        <span class="tag">SQLite / File I/O</span>
-        <span class="tag">OOP</span>
+        <span class="tag">Swing &amp; AWT</span>
+        <span class="tag">File I/O</span>
+        <span class="tag">Database</span>
       </div>
 
       <div class="project-actions">
@@ -621,7 +674,142 @@
   </div>
 </div>
 
-<!-- Java To-Do List Modal -->
+<!-- Employee Payroll Modal -->
+<div
+  class="modal"
+  [class.is-open]="openModalId === 'payroll'"
+  [attr.aria-hidden]="openModalId === 'payroll' ? 'false' : 'true'"
+  role="dialog"
+  aria-labelledby="payroll-title"
+>
+  <div class="modal-backdrop" (click)="closeModal()"></div>
+
+  <div class="modal-dialog">
+    <button
+      class="modal-close"
+      type="button"
+      aria-label="Close"
+      (click)="closeModal()"
+    >
+      &times;
+    </button>
+
+    <header class="modal-header">
+      <h3 class="modal-title" id="payroll-title">Employee Payroll System</h3>
+      <p class="modal-subtitle">
+        Demonstrating a full OOP class hierarchy for payroll calculations.
+      </p>
+    </header>
+
+    <div class="modal-body">
+      <div class="modal-gallery">
+        <button
+          class="gallery-nav gallery-prev"
+          type="button"
+          (click)="changeSlide('payroll', -1)"
+        >
+          &larr;
+        </button>
+
+        <div class="gallery-frame">
+          <img
+            src="emp2.JPG"
+            alt="Main payroll screen showing employee list"
+            class="gallery-image"
+            [class.is-active]="currentSlide.payroll === 0"
+          />
+          <img
+            src="emp3.JPG"
+            alt="Employee details and salary breakdown"
+            class="gallery-image"
+            [class.is-active]="currentSlide.payroll === 1"
+          />
+          <img
+            src="emp4.JPG"
+            alt="Summary of payroll calculations"
+            class="gallery-image"
+            [class.is-active]="currentSlide.payroll === 2"
+          />
+
+          <button
+            type="button"
+            class="image-overlay"
+            (click)="openImagePreview(getActiveImage('payroll'), 'Employee payroll system screen'); $event.stopPropagation()"
+            aria-label="View full image"
+          >
+            <span class="eye-icon">👁</span>
+          </button>
+        </div>
+
+        <button
+          class="gallery-nav gallery-next"
+          type="button"
+          (click)="changeSlide('payroll', 1)"
+        >
+          &rarr;
+        </button>
+
+        <div class="gallery-dots">
+          <button
+            type="button"
+            class="dot"
+            [class.is-active]="currentSlide.payroll === 0"
+            (click)="goToSlide('payroll', 0)"
+          ></button>
+          <button
+            type="button"
+            class="dot"
+            [class.is-active]="currentSlide.payroll === 1"
+            (click)="goToSlide('payroll', 1)"
+          ></button>
+          <button
+            type="button"
+            class="dot"
+            [class.is-active]="currentSlide.payroll === 2"
+            (click)="goToSlide('payroll', 2)"
+          ></button>
+        </div>
+      </div>
+
+      <div class="modal-content">
+        <section class="modal-section">
+          <h4>Project Overview</h4>
+          <p>
+            This payroll system is built as a clean object-oriented project. It uses a class
+            hierarchy to model different employee types (for example: FullTime, PartTime,
+            Contractor), each with its own pay rules.
+          </p>
+          <p>
+            The goal of this project is to clearly demonstrate inheritance, polymorphism,
+            and encapsulation in a practical, real-world scenario.
+          </p>
+        </section>
+
+        <section class="modal-section">
+          <h4>What it does</h4>
+          <ul>
+            <li>Stores employees with their role, rate, and hours.</li>
+            <li>Calculates gross pay based on employee type.</li>
+            <li>Supports overtime or bonus logic per subclass.</li>
+            <li>Outputs a summary of payroll for all employees.</li>
+          </ul>
+        </section>
+
+        <section class="modal-section">
+          <h4>Tech & Skills</h4>
+          <div class="pill-row">
+            <span class="pill">Object-Oriented Programming</span>
+            <span class="pill">Class Hierarchy Design</span>
+            <span class="pill">Inheritance &amp; Polymorphism</span>
+            <span class="pill">Encapsulation</span>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Java To-Do List Modal (UPDATED TEXT) -->
 <div
   class="modal"
   [class.is-open]="openModalId === 'todolist'"
@@ -644,7 +832,7 @@
     <header class="modal-header">
       <h3 class="modal-title" id="todolist-title">Java To-Do List Manager</h3>
       <p class="modal-subtitle">
-        A focused desktop task manager built with Java and JavaFX.
+        A desktop to-do app using Java, Swing, AWT, and persistence.
       </p>
     </header>
 
@@ -660,20 +848,20 @@
 
         <div class="gallery-frame">
           <img
-            src="todo1.JPG"
-            alt="Main task list view"
+            src="java2.JPG"
+            alt="Main task list view in Java Swing"
             class="gallery-image"
             [class.is-active]="currentSlide.todolist === 0"
           />
           <img
-            src="todo2.JPG"
-            alt="Task creation/edit form"
+            src="java3.JPG"
+            alt="Task creation/edit form in Swing"
             class="gallery-image"
             [class.is-active]="currentSlide.todolist === 1"
           />
           <img
-            src="todo3.JPG"
-            alt="Tasks filtered by completed status"
+            src="java4.JPG"
+            alt="Tasks filtered and styled with Swing/AWT"
             class="gallery-image"
             [class.is-active]="currentSlide.todolist === 2"
           />
@@ -722,23 +910,22 @@
         <section class="modal-section">
           <h4>Project Overview</h4>
           <p>
-            A lightweight desktop app that helps users keep track of daily tasks. It supports
-            adding new tasks, editing existing ones, marking them as done, and optionally
-            assigning due dates.
+            A desktop to-do list application written in Java. The UI is built with Swing and AWT,
+            and tasks are saved using File I/O and a database layer so that they persist between runs.
           </p>
           <p>
-            It’s designed as a clean Java OOP project with a clear separation between the UI
-            and the task management logic.
+            It’s structured as a small MVC-style project: the view is Swing/AWT forms, the model
+            is the task objects, and the controller handles adding, updating, and persisting tasks.
           </p>
         </section>
 
         <section class="modal-section">
           <h4>What it does</h4>
           <ul>
-            <li>Add, edit, and delete tasks.</li>
+            <li>Add, edit, and delete tasks from a desktop UI.</li>
             <li>Mark tasks as completed or active.</li>
-            <li>Filter views by All, Active, or Completed.</li>
-            <li>Persist tasks locally using SQLite or file storage.</li>
+            <li>Filter tasks by All, Active, or Completed.</li>
+            <li>Persist tasks using File I/O and/or a lightweight database.</li>
           </ul>
         </section>
 
@@ -746,9 +933,10 @@
           <h4>Tech & Skills</h4>
           <div class="pill-row">
             <span class="pill">Java</span>
-            <span class="pill">JavaFX / Swing</span>
-            <span class="pill">SQLite / File I/O</span>
-            <span class="pill">OOP & MVC</span>
+            <span class="pill">Swing &amp; AWT</span>
+            <span class="pill">File I/O</span>
+            <span class="pill">Database / JDBC</span>
+            <span class="pill">MVC Pattern</span>
           </div>
         </section>
       </div>

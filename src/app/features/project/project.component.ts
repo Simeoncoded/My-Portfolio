@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, HostListener } from '@angular/core';
 
-type ModalId = 'machinery' | 'smartreserve' | 'petadoption' | 'todolist';
+type ModalId = 'machinery' | 'smartreserve' | 'petadoption' | 'payroll' | 'todolist';
 
 @Component({
   selector: 'app-project',
@@ -18,6 +18,7 @@ export class ProjectComponent {
     machinery: 0,
     smartreserve: 0,
     petadoption: 0,
+    payroll: 0,
     todolist: 0
   };
 
@@ -26,6 +27,7 @@ export class ProjectComponent {
     machinery: ['gantt3.JPG', 'gantt4.JPG', 'gantt2.JPG'],
     smartreserve: ['res2.JPG', 'res3.JPG', 'res4.JPG'],
     petadoption: ['pet2.JPG', 'pet3.JPG', 'pet4.JPG'],
+    payroll: ['pay1.JPG', 'pay2.JPG', 'pay3.JPG'],
     todolist: ['todo1.JPG', 'todo2.JPG', 'todo3.JPG']
   };
 
