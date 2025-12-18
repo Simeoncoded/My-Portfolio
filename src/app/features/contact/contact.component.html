@@ -1,86 +1,42 @@
 <section id="contact" class="contact-section" aria-labelledby="contact-title">
-  <div class="contact-wrap">
-    <h2 id="contact-title" class="contact-title">Let’s Connect</h2>
+    <div class="contact-wrap">
+      <h2 id="contact-title" class="contact-title">Let’s Connect</h2>
+  
+      <form id="contactForm" class="contact-form"
+            action="https://formspree.io/f/xovnyezy"
+            method="POST" accept-charset="utf-8">
+        
+        <div class="field">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text"
+                 placeholder="Your name"
+                 autocomplete="name" required minlength="2" />
+        </div>
+  
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email"
+                 placeholder="you@example.com"
+                 autocomplete="email" inputmode="email" required />
+        </div>
+  
+        <div class="field full">
+          <label for="message">Message</label>
+          <textarea id="message" name="message"
+                    placeholder="Your message…" rows="6"
+                    required minlength="10" maxlength="2000"
+                    spellcheck="true"></textarea>
+        </div>
 
-    <form
-      id="contactForm"
-      class="contact-form"
-      action="https://formspree.io/f/xovnyezy"
-      method="POST"
-      accept-charset="utf-8"
-      (submit)="onSubmit($event)"
-    >
-      <div class="field">
-        <label for="name">Name</label>
-        <input
-          id="name"
-          name="name"
-          type="text"
-          placeholder="Your name"
-          autocomplete="name"
-          required
-          minlength="2"
-        />
-      </div>
-
-      <div class="field">
-        <label for="email">Email</label>
-        <input
-          id="email"
-          name="email"
-          type="email"
-          placeholder="you@example.com"
-          autocomplete="email"
-          inputmode="email"
-          required
-        />
-      </div>
-
-      <div class="field full">
-        <label for="message">Message</label>
-        <textarea
-          id="message"
-          name="message"
-          placeholder="Your message…"
-          rows="6"
-          required
-          minlength="10"
-          maxlength="2000"
-          spellcheck="true"
-        ></textarea>
-      </div>
-
-      <input
-        type="hidden"
-        name="_subject"
-        value="New message from your portfolio"
-      />
-
-      <!-- Honeypot -->
-      <input
-        type="text"
-        name="_honeypot"
-        class="hp"
-        tabindex="-1"
-        autocomplete="off"
-        aria-hidden="true"
-      />
-
-      <div class="actions">
-        <button type="submit" class="btn btn-primary" [disabled]="isSending">
-          {{ isSending ? "Sending..." : "Send" }}
-        </button>
-
-        <span
-          class="form-status"
-          role="status"
-          aria-live="polite"
-          [class.ok]="statusType === 'ok'"
-          [class.err]="statusType === 'err'"
-        >
-          {{ statusMessage }}
-        </span>
-      </div>
-    </form>
-  </div>
-</section>
+        <input type="hidden" name="_subject" value="New message from your portfolio" />
+  
+        <input type="text" name="_honeypot" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+  
+        <div class="actions">
+          <button type="submit" class="btn btn-primary">Send</button>
+          <span class="form-status" role="status" aria-live="polite"></span>
+        </div>
+      </form>
+    </div>
+  </section>
+  
