@@ -5,9 +5,10 @@
     <form
       id="contactForm"
       class="contact-form"
-      #contactForm="ngForm"
-      (ngSubmit)="onSubmit(contactForm)"
-      novalidate
+      action="https://formspree.io/f/xovnyezy"
+      method="POST"
+      accept-charset="utf-8"
+      (submit)="onSubmit($event)"
     >
       <div class="field">
         <label for="name">Name</label>
@@ -19,7 +20,6 @@
           autocomplete="name"
           required
           minlength="2"
-          ngModel
         />
       </div>
 
@@ -27,13 +27,12 @@
         <label for="email">Email</label>
         <input
           id="email"
-          name="_replyto"
+          name="email"
           type="email"
           placeholder="you@example.com"
           autocomplete="email"
           inputmode="email"
           required
-          ngModel
         />
       </div>
 
@@ -48,7 +47,6 @@
           minlength="10"
           maxlength="2000"
           spellcheck="true"
-          ngModel
         ></textarea>
       </div>
 
@@ -56,7 +54,6 @@
         type="hidden"
         name="_subject"
         value="New message from your portfolio"
-        ngModel
       />
 
       <!-- Honeypot -->
@@ -67,7 +64,6 @@
         tabindex="-1"
         autocomplete="off"
         aria-hidden="true"
-        ngModel
       />
 
       <div class="actions">

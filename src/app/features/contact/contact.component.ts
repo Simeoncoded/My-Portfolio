@@ -1,72 +1,64 @@
 import { Component } from "@angular/core";
-import { FormsModule, NgForm } from "@angular/forms";
 
 @Component({
   selector: "app-contact",
   standalone: true,
-  imports: [FormsModule],
   templateUrl: "./contact.component.html",
   styleUrl: "./contact.component.css",
 })
 export class ContactComponent {
-  // Your Formspree endpoint
-  private readonly FORMSPREE_URL = "https://formspree.io/f/xovnyezy";
-
   isSending = false;
   statusMessage = "";
   statusType: "idle" | "ok" | "err" = "idle";
 
-  async onSubmit(form: NgForm) {
+  async onSubmit(e: Event) {
+    e.preventDefault();
     if (this.isSending) return;
 
-    // Angular template-driven validation
-    if (form.invalid) {
+    const form = e.target as HTMLFormElement;
+
+    // Use built-in HTML validation
+    if (!form.checkValidity()) {
+      form.reportValidity();
       this.statusType = "err";
       this.statusMessage = "Please fill out the form correctly.";
       return;
     }
 
     this.isSending = true;
-    this.statusType = "idle";
     this.statusMessage = "Sending…";
+    this.statusType = "idle";
 
     try {
-      const payload = { ...form.value };
+      const formData = new FormData(form);
 
-      // Honeypot (bots)
-      const hp = (payload._honeypot ?? "").toString().trim();
+      // Honeypot (spam bots)
+      const hp = (formData.get("_honeypot") ?? "").toString().trim();
       if (hp) {
-        form.resetForm();
+        form.reset();
         this.statusType = "ok";
         this.statusMessage = "Message sent ✅";
+        this.isSending = false;
         return;
       }
 
-      const res = await fetch(this.FORMSPREE_URL, {
+      const res = await fetch(form.action, {
         method: "POST",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(payload),
+        headers: { Accept: "application/json" },
+        body: formData,
       });
 
-      const data = await res.json().catch(() => null);
-
       if (res.ok) {
-        form.resetForm(); // ✅ clears inputs
+        form.reset(); // ✅ clears inputs
         this.statusType = "ok";
         this.statusMessage = "Message sent ✅";
       } else {
         this.statusType = "err";
-        this.statusMessage =
-          data?.error || "Form submission failed. Please try again.";
-        console.error("Formspree error:", res.status, data);
+        this.statusMessage = "Something went wrong. Please try again.";
       }
-    } catch (err) {
+    } catch {
       this.statusType = "err";
       this.statusMessage = "Network error. Please try again.";
-      console.error(err);
     } finally {
       this.isSending = false;
     }
