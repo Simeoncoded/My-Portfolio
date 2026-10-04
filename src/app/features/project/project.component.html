@@ -2,14 +2,87 @@
   <h2 class="section-title" id="projects-title">Projects</h2>
 
   <div class="projects-grid">
+
+    <!-- ========================================================= -->
+    <!-- JobTracker -->
+    <!-- ========================================================= -->
+
+    <article class="project-card">
+      <figure class="project-media">
+        <img
+          src="jobtracker1.JPG"
+          alt="JobTracker job application dashboard"
+        />
+
+        <button
+          type="button"
+          class="image-overlay"
+          (click)="openImagePreview('jobtracker1.JPG', 'JobTracker dashboard'); $event.stopPropagation()"
+          aria-label="View full image"
+        >
+          <span class="eye-icon">👁</span>
+        </button>
+      </figure>
+
+      <header class="project-head">
+        <h3 class="project-title">JobTracker</h3>
+
+        <p class="project-subtitle">
+          Full-stack job application tracker with AI-powered resume analysis.
+        </p>
+      </header>
+
+      <p class="project-desc">
+        A full-stack web application that helps users organize job applications,
+        manage resumes, and use AI to compare their resume against job descriptions
+        to identify matching and missing skills.
+      </p>
+
+      <div class="project-tags">
+        <span class="tag">ASP.NET Core</span>
+        <span class="tag">React</span>
+        <span class="tag">PostgreSQL</span>
+        <span class="tag">OpenAI</span>
+        <span class="tag">Azure</span>
+      </div>
+
+      <div class="project-actions">
+        <button class="btn btn-primary" (click)="openModal('jobtracker')">
+          See details
+        </button>
+
+        <a
+          class="btn btn-ghost"
+          href="https://witty-plant-04da50b0f.4.azurestaticapps.net"
+          target="_blank"
+          rel="noopener"
+        >
+          Live Demo
+        </a>
+
+        <a
+          class="btn btn-ghost"
+          href="https://github.com/Simeoncoded/JobTracker"
+          target="_blank"
+          rel="noopener"
+        >
+          GitHub
+        </a>
+      </div>
+    </article>
+
+
+    <!-- ========================================================= -->
     <!-- Machinery Schedules -->
+    <!-- ========================================================= -->
+
     <article class="project-card">
       <figure class="project-media">
         <img
           src="gantt1.JPG"
           alt="Machinery schedules dashboard"
         />
-        <!-- Hover eye overlay -> opens image preview modal -->
+
         <button
           type="button"
           class="image-overlay"
@@ -22,6 +95,7 @@
 
       <header class="project-head">
         <h3 class="project-title">Machinery Schedules System</h3>
+
         <p class="project-subtitle">
           Centralized planning for Engineering, Production & Procurement.
         </p>
@@ -29,7 +103,8 @@
 
       <p class="project-desc">
         Unifies two department schedules into one source of truth.
-        Automatically generates digital and Excel Gantt charts, plus email notifications for deadlines.
+        Automatically generates digital and Excel Gantt charts, plus email
+        notifications for deadlines.
       </p>
 
       <div class="project-tags">
@@ -43,6 +118,7 @@
         <button class="btn btn-primary" (click)="openModal('machinery')">
           See details
         </button>
+
         <a
           class="btn btn-ghost"
           href="https://github.com/Simeoncoded/Haver-new"
@@ -54,13 +130,18 @@
       </div>
     </article>
 
+
+    <!-- ========================================================= -->
     <!-- Smart Reserve -->
+    <!-- ========================================================= -->
+
     <article class="project-card">
       <figure class="project-media">
         <img
           src="res1.JPG"
           alt="Smart Reserve AI reservation interface"
         />
+
         <button
           type="button"
           class="image-overlay"
@@ -73,6 +154,7 @@
 
       <header class="project-head">
         <h3 class="project-title">Smart Reserve</h3>
+
         <p class="project-subtitle">
           AI-assisted restaurant reservations through natural language.
         </p>
@@ -94,6 +176,7 @@
         <button class="btn btn-primary" (click)="openModal('smartreserve')">
           See details
         </button>
+
         <a
           class="btn btn-ghost"
           href="https://github.com/Simeoncoded/Restaurant-Reservation-System"
@@ -105,13 +188,18 @@
       </div>
     </article>
 
+
+    <!-- ========================================================= -->
     <!-- Pet Adoption -->
+    <!-- ========================================================= -->
+
     <article class="project-card">
       <figure class="project-media">
         <img
           src="pet1.JPG"
           alt="Pet adoption desktop app UI"
         />
+
         <button
           type="button"
           class="image-overlay"
@@ -124,7 +212,10 @@
 
       <header class="project-head">
         <h3 class="project-title">Pet Adoption System</h3>
-        <p class="project-subtitle">Desktop app with a live Web API backend.</p>
+
+        <p class="project-subtitle">
+          Desktop app with a live Web API backend.
+        </p>
       </header>
 
       <p class="project-desc">
@@ -143,6 +234,7 @@
         <button class="btn btn-primary" (click)="openModal('petadoption')">
           See details
         </button>
+
         <a
           class="btn btn-ghost"
           href="https://github.com/Simeoncoded/Pet-Adoption-App"
@@ -154,13 +246,18 @@
       </div>
     </article>
 
-    <!-- Employee Payroll System (NEW) -->
+
+    <!-- ========================================================= -->
+    <!-- Employee Payroll System -->
+    <!-- ========================================================= -->
+
     <article class="project-card">
       <figure class="project-media">
         <img
           src="emp1.JPG"
           alt="Employee payroll system interface"
         />
+
         <button
           type="button"
           class="image-overlay"
@@ -173,6 +270,7 @@
 
       <header class="project-head">
         <h3 class="project-title">Employee Payroll System</h3>
+
         <p class="project-subtitle">
           OOP-based payroll app backed by a class hierarchy.
         </p>
@@ -194,6 +292,7 @@
         <button class="btn btn-primary" (click)="openModal('payroll')">
           See details
         </button>
+
         <a
           class="btn btn-ghost"
           href="https://github.com/Simeoncoded/Employee-Payroll-System"
@@ -205,13 +304,18 @@
       </div>
     </article>
 
-    <!-- Java To-Do List (UPDATED TEXT) -->
+
+    <!-- ========================================================= -->
+    <!-- Java To-Do List -->
+    <!-- ========================================================= -->
+
     <article class="project-card">
       <figure class="project-media">
         <img
           src="java1.JPG"
           alt="Java to-do list desktop app interface"
         />
+
         <button
           type="button"
           class="image-overlay"
@@ -224,6 +328,7 @@
 
       <header class="project-head">
         <h3 class="project-title">Java To-Do List Manager</h3>
+
         <p class="project-subtitle">
           Desktop task manager built with Java Swing &amp; AWT.
         </p>
@@ -246,6 +351,7 @@
         <button class="btn btn-primary" (click)="openModal('todolist')">
           See details
         </button>
+
         <a
           class="btn btn-ghost"
           href="https://github.com/Simeoncoded/Java-ToDo"
@@ -256,22 +362,31 @@
         </a>
       </div>
     </article>
+
   </div>
 </section>
 
-<!-- ========== PROJECT MODALS ========== -->
 
-<!-- Machinery Modal -->
+<!-- ============================================================= -->
+<!-- PROJECT MODALS -->
+<!-- ============================================================= -->
+
+
+<!-- ============================================================= -->
+<!-- JobTracker Modal -->
+<!-- ============================================================= -->
+
 <div
   class="modal"
-  [class.is-open]="openModalId === 'machinery'"
-  [attr.aria-hidden]="openModalId === 'machinery' ? 'false' : 'true'"
+  [class.is-open]="openModalId === 'jobtracker'"
+  [attr.aria-hidden]="openModalId === 'jobtracker' ? 'false' : 'true'"
   role="dialog"
-  aria-labelledby="machinery-title"
+  aria-labelledby="jobtracker-title"
 >
   <div class="modal-backdrop" (click)="closeModal()"></div>
 
   <div class="modal-dialog">
+
     <button
       class="modal-close"
       type="button"
@@ -282,16 +397,253 @@
     </button>
 
     <header class="modal-header">
-      <h3 class="modal-title" id="machinery-title">
-        Machinery Schedules System
+
+      <h3 class="modal-title" id="jobtracker-title">
+        JobTracker
       </h3>
+
       <p class="modal-subtitle">
-        Making deadlines visible for Engineering, Production, and Procurement.
+        A full-stack job application tracker with AI-powered resume analysis.
       </p>
+
     </header>
 
     <div class="modal-body">
+
       <div class="modal-gallery">
+
+        <button
+          class="gallery-nav gallery-prev"
+          type="button"
+          (click)="changeSlide('jobtracker', -1)"
+        >
+          &larr;
+        </button>
+
+        <div class="gallery-frame">
+
+          <img
+            src="jobtracker1.JPG"
+            alt="JobTracker dashboard showing job applications"
+            class="gallery-image"
+            [class.is-active]="currentSlide.jobtracker === 0"
+          />
+
+          <img
+            src="jobtracker2.JPG"
+            alt="JobTracker resume and AI analysis interface"
+            class="gallery-image"
+            [class.is-active]="currentSlide.jobtracker === 1"
+          />
+
+          <img
+            src="jobtracker3.JPG"
+            alt="JobTracker AI job analysis results"
+            class="gallery-image"
+            [class.is-active]="currentSlide.jobtracker === 2"
+          />
+
+          <button
+            type="button"
+            class="image-overlay"
+            (click)="openImagePreview(getActiveImage('jobtracker'), ''); $event.stopPropagation()"
+            aria-label="View full image"
+          >
+            <span class="eye-icon">👁</span>
+          </button>
+
+        </div>
+
+        <button
+          class="gallery-nav gallery-next"
+          type="button"
+          (click)="changeSlide('jobtracker', 1)"
+        >
+          &rarr;
+        </button>
+
+        <div class="gallery-dots">
+
+          <button
+            type="button"
+            class="dot"
+            [class.is-active]="currentSlide.jobtracker === 0"
+            (click)="goToSlide('jobtracker', 0)"
+          ></button>
+
+          <button
+            type="button"
+            class="dot"
+            [class.is-active]="currentSlide.jobtracker === 1"
+            (click)="goToSlide('jobtracker', 1)"
+          ></button>
+
+          <button
+            type="button"
+            class="dot"
+            [class.is-active]="currentSlide.jobtracker === 2"
+            (click)="goToSlide('jobtracker', 2)"
+          ></button>
+
+        </div>
+
+      </div>
+
+
+      <div class="modal-content">
+
+        <section class="modal-section">
+
+          <h4>Project Overview</h4>
+
+          <p>
+            JobTracker is a full-stack web application designed to help users
+            organize their job search in one place. Users can create accounts,
+            manage companies and job applications, upload resumes, and track
+            the progress of their applications.
+          </p>
+
+          <p>
+            The application also uses AI to compare a user's resume against a
+            job description and provide a match score, matching skills,
+            missing skills, and a recommendation.
+          </p>
+
+        </section>
+
+
+        <section class="modal-section">
+
+          <h4>What it does</h4>
+
+          <ul>
+            <li>
+              Allows users to create an account and securely manage their own data.
+            </li>
+
+            <li>
+              Tracks job applications, companies, positions, statuses, dates,
+              locations, salaries, and job links.
+            </li>
+
+            <li>
+              Allows users to upload and manage resumes.
+            </li>
+
+            <li>
+              Extracts resume content for analysis.
+            </li>
+
+            <li>
+              Uses OpenAI to compare resumes against job descriptions.
+            </li>
+
+            <li>
+              Generates an AI match score and identifies matching and missing skills.
+            </li>
+
+            <li>
+              Uses PostgreSQL to persist application, resume, company, and
+              analysis data.
+            </li>
+
+            <li>
+              Uses JWT authentication and ASP.NET Core Identity for user accounts
+              and authorization.
+            </li>
+
+            <li>
+              Is deployed using Azure App Service, Azure Static Web Apps,
+              and Supabase PostgreSQL.
+            </li>
+          </ul>
+
+        </section>
+
+
+        <section class="modal-section">
+
+          <h4>Tech &amp; Skills</h4>
+
+          <div class="pill-row">
+
+            <span class="pill">C#</span>
+            <span class="pill">ASP.NET Core Web API</span>
+            <span class="pill">React</span>
+            <span class="pill">PostgreSQL</span>
+            <span class="pill">Entity Framework Core</span>
+            <span class="pill">ASP.NET Core Identity</span>
+            <span class="pill">JWT Authentication</span>
+            <span class="pill">OpenAI API</span>
+            <span class="pill">Azure</span>
+            <span class="pill">Supabase</span>
+            <span class="pill">GitHub</span>
+
+          </div>
+
+        </section>
+
+
+        <section class="modal-section">
+
+          <h4>Deployment</h4>
+
+          <p>
+            The frontend is deployed through Azure Static Web Apps, while the
+            ASP.NET Core API runs on Azure App Service. PostgreSQL is hosted
+            through Supabase.
+          </p>
+
+        </section>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ============================================================= -->
+<!-- Machinery Modal -->
+<!-- ============================================================= -->
+
+<div
+  class="modal"
+  [class.is-open]="openModalId === 'machinery'"
+  [attr.aria-hidden]="openModalId === 'machinery' ? 'false' : 'true'"
+  role="dialog"
+  aria-labelledby="machinery-title"
+>
+  <div class="modal-backdrop" (click)="closeModal()"></div>
+
+  <div class="modal-dialog">
+
+    <button
+      class="modal-close"
+      type="button"
+      aria-label="Close"
+      (click)="closeModal()"
+    >
+      &times;
+    </button>
+
+    <header class="modal-header">
+
+      <h3 class="modal-title" id="machinery-title">
+        Machinery Schedules System
+      </h3>
+
+      <p class="modal-subtitle">
+        Making deadlines visible for Engineering, Production, and Procurement.
+      </p>
+
+    </header>
+
+    <div class="modal-body">
+
+      <div class="modal-gallery">
+
         <button
           class="gallery-nav gallery-prev"
           type="button"
@@ -301,18 +653,21 @@
         </button>
 
         <div class="gallery-frame">
+
           <img
             src="gantt3.JPG"
             alt="Combined Gantt schedule view"
             class="gallery-image"
             [class.is-active]="currentSlide.machinery === 0"
           />
+
           <img
             src="gantt4.JPG"
             alt="Excel Gantt export sample"
             class="gallery-image"
             [class.is-active]="currentSlide.machinery === 1"
           />
+
           <img
             src="gantt2.JPG"
             alt="Machine detail and deadline panel"
@@ -320,7 +675,6 @@
             [class.is-active]="currentSlide.machinery === 2"
           />
 
-          <!-- Eye overlay -> preview current slide -->
           <button
             type="button"
             class="image-overlay"
@@ -329,6 +683,7 @@
           >
             <span class="eye-icon">👁</span>
           </button>
+
         </div>
 
         <button
@@ -340,54 +695,73 @@
         </button>
 
         <div class="gallery-dots">
+
           <button
             type="button"
             class="dot"
             [class.is-active]="currentSlide.machinery === 0"
             (click)="goToSlide('machinery', 0)"
           ></button>
+
           <button
             type="button"
             class="dot"
             [class.is-active]="currentSlide.machinery === 1"
             (click)="goToSlide('machinery', 1)"
           ></button>
+
           <button
             type="button"
             class="dot"
             [class.is-active]="currentSlide.machinery === 2"
             (click)="goToSlide('machinery', 2)"
           ></button>
+
         </div>
+
       </div>
 
+
       <div class="modal-content">
+
         <section class="modal-section">
+
           <h4>Project Overview</h4>
+
           <p>
             This system replaces disconnected Excel files used by multiple departments.
             It creates a single, centralized schedule where each machine’s engineering,
             procurement, and production deadlines are visible in one timeline.
           </p>
+
           <p>
             For non-technical folks: think of it as a live “master schedule” that
             automatically updates and can be shared as a neat Excel Gantt chart for meetings.
           </p>
+
         </section>
 
+
         <section class="modal-section">
+
           <h4>What it does</h4>
+
           <ul>
             <li>Combines engineering and operations schedules into one view.</li>
             <li>Generates digital Gantt charts for day-to-day tracking.</li>
             <li>Exports clean Excel reports for managers and clients.</li>
             <li>Sends reminder emails before and after missed deadlines.</li>
           </ul>
+
         </section>
 
+
         <section class="modal-section">
-          <h4>Tech & Skills</h4>
+
+          <h4>Tech &amp; Skills</h4>
+
           <div class="pill-row">
+
             <span class="pill">ASP.NET Core MVC</span>
             <span class="pill">C#</span>
             <span class="pill">SQL Server</span>
@@ -395,14 +769,23 @@
             <span class="pill">EPPlus (Excel)</span>
             <span class="pill">DHTMLX Gantt</span>
             <span class="pill">Bootstrap</span>
+
           </div>
+
         </section>
+
       </div>
+
     </div>
+
   </div>
 </div>
 
+
+<!-- ============================================================= -->
 <!-- Smart Reserve Modal -->
+<!-- ============================================================= -->
+
 <div
   class="modal"
   [class.is-open]="openModalId === 'smartreserve'"
@@ -413,6 +796,7 @@
   <div class="modal-backdrop" (click)="closeModal()"></div>
 
   <div class="modal-dialog">
+
     <button
       class="modal-close"
       type="button"
@@ -423,14 +807,21 @@
     </button>
 
     <header class="modal-header">
-      <h3 class="modal-title" id="smartreserve-title">Smart Reserve</h3>
+
+      <h3 class="modal-title" id="smartreserve-title">
+        Smart Reserve
+      </h3>
+
       <p class="modal-subtitle">
         Natural language reservations for modern restaurants.
       </p>
+
     </header>
 
     <div class="modal-body">
+
       <div class="modal-gallery">
+
         <button
           class="gallery-nav gallery-prev"
           type="button"
@@ -440,18 +831,21 @@
         </button>
 
         <div class="gallery-frame">
+
           <img
             src="res2.JPG"
             alt="Conversation UI for booking a table"
             class="gallery-image"
             [class.is-active]="currentSlide.smartreserve === 0"
           />
+
           <img
             src="res3.JPG"
             alt="Restaurant dashboard for managing bookings"
             class="gallery-image"
             [class.is-active]="currentSlide.smartreserve === 1"
           />
+
           <img
             src="res4.JPG"
             alt="Mobile view of booking confirmation"
@@ -467,6 +861,7 @@
           >
             <span class="eye-icon">👁</span>
           </button>
+
         </div>
 
         <button
@@ -478,54 +873,73 @@
         </button>
 
         <div class="gallery-dots">
+
           <button
             type="button"
             class="dot"
             [class.is-active]="currentSlide.smartreserve === 0"
             (click)="goToSlide('smartreserve', 0)"
           ></button>
+
           <button
             type="button"
             class="dot"
             [class.is-active]="currentSlide.smartreserve === 1"
             (click)="goToSlide('smartreserve', 1)"
           ></button>
+
           <button
             type="button"
             class="dot"
             [class.is-active]="currentSlide.smartreserve === 2"
             (click)="goToSlide('smartreserve', 2)"
           ></button>
+
         </div>
+
       </div>
 
+
       <div class="modal-content">
+
         <section class="modal-section">
+
           <h4>Project Overview</h4>
+
           <p>
             Smart Reserve lets customers talk to the system like they would talk to a host:
             “Book a table for 4 at 7pm tomorrow” — and the app handles availability, time,
             and confirmation automatically.
           </p>
+
           <p>
             For clients: it reduces phone calls, speeds up bookings, and gives you a more
             modern first impression without replacing your existing reservation tools.
           </p>
+
         </section>
 
+
         <section class="modal-section">
+
           <h4>What it does</h4>
+
           <ul>
             <li>Accepts free-text messages and extracts date, time, party size, and notes.</li>
             <li>Checks for availability and conflicts on the backend.</li>
             <li>Sends a structured confirmation back to the guest.</li>
             <li>Provides an internal dashboard for staff to review and adjust bookings.</li>
           </ul>
+
         </section>
 
+
         <section class="modal-section">
-          <h4>Tech & Skills</h4>
+
+          <h4>Tech &amp; Skills</h4>
+
           <div class="pill-row">
+
             <span class="pill">ASP.NET Core MVC</span>
             <span class="pill">TypeScript</span>
             <span class="pill">React Query</span>
@@ -533,14 +947,23 @@
             <span class="pill">ASP.NET Core Web API</span>
             <span class="pill">OpenAI API</span>
             <span class="pill">Razor</span>
+
           </div>
+
         </section>
+
       </div>
+
     </div>
+
   </div>
 </div>
 
+
+<!-- ============================================================= -->
 <!-- Pet Adoption Modal -->
+<!-- ============================================================= -->
+
 <div
   class="modal"
   [class.is-open]="openModalId === 'petadoption'"
@@ -551,6 +974,7 @@
   <div class="modal-backdrop" (click)="closeModal()"></div>
 
   <div class="modal-dialog">
+
     <button
       class="modal-close"
       type="button"
@@ -561,12 +985,21 @@
     </button>
 
     <header class="modal-header">
-      <h3 class="modal-title" id="petadoption-title">Pet Adoption System</h3>
-      <p class="modal-subtitle">Helping the right pet find the right home faster.</p>
+
+      <h3 class="modal-title" id="petadoption-title">
+        Pet Adoption System
+      </h3>
+
+      <p class="modal-subtitle">
+        Helping the right pet find the right home faster.
+      </p>
+
     </header>
 
     <div class="modal-body">
+
       <div class="modal-gallery">
+
         <button
           class="gallery-nav gallery-prev"
           type="button"
@@ -576,18 +1009,21 @@
         </button>
 
         <div class="gallery-frame">
+
           <img
             src="pet2.JPG"
             alt="Pet list with filters in the desktop app"
             class="gallery-image"
             [class.is-active]="currentSlide.petadoption === 0"
           />
+
           <img
             src="pet3.JPG"
             alt="Pet profile details and status"
             class="gallery-image"
             [class.is-active]="currentSlide.petadoption === 1"
           />
+
           <img
             src="pet4.JPG"
             alt="Admin view connected to the Web API"
@@ -603,6 +1039,7 @@
           >
             <span class="eye-icon">👁</span>
           </button>
+
         </div>
 
         <button
@@ -614,66 +1051,94 @@
         </button>
 
         <div class="gallery-dots">
+
           <button
             type="button"
             class="dot"
             [class.is-active]="currentSlide.petadoption === 0"
             (click)="goToSlide('petadoption', 0)"
           ></button>
+
           <button
             type="button"
             class="dot"
             [class.is-active]="currentSlide.petadoption === 1"
             (click)="goToSlide('petadoption', 1)"
           ></button>
+
           <button
             type="button"
             class="dot"
             [class.is-active]="currentSlide.petadoption === 2"
             (click)="goToSlide('petadoption', 2)"
           ></button>
+
         </div>
+
       </div>
 
+
       <div class="modal-content">
+
         <section class="modal-section">
+
           <h4>Project Overview</h4>
+
           <p>
             A desktop application for shelter staff to manage animals, track adoption status,
             and stay in sync with a central Web API.
           </p>
+
           <p>
             In simple terms: staff see one clear list of all pets, their history, and whether they’re
             ready for adoption, reserved, or already adopted.
           </p>
+
         </section>
 
+
         <section class="modal-section">
+
           <h4>What it does</h4>
+
           <ul>
             <li>Registers new animals with age, breed, and health notes.</li>
             <li>Tracks adoption progress and current status.</li>
             <li>Connects to an ASP.NET Core Web API for shared data across branches.</li>
             <li>Provides filters and search to quickly find suitable pets for families.</li>
           </ul>
+
         </section>
 
+
         <section class="modal-section">
-          <h4>Tech & Skills</h4>
+
+          <h4>Tech &amp; Skills</h4>
+
           <div class="pill-row">
+
             <span class="pill">C# Desktop (WPF / UWP / WinForms)</span>
             <span class="pill">ASP.NET Core Web API</span>
             <span class="pill">Entity Framework Core</span>
             <span class="pill">SQL</span>
             <span class="pill">RESTful Design</span>
+
           </div>
+
         </section>
+
       </div>
+
     </div>
+
   </div>
 </div>
 
+
+<!-- ============================================================= -->
 <!-- Employee Payroll Modal -->
+<!-- ============================================================= -->
+
 <div
   class="modal"
   [class.is-open]="openModalId === 'payroll'"
@@ -684,6 +1149,7 @@
   <div class="modal-backdrop" (click)="closeModal()"></div>
 
   <div class="modal-dialog">
+
     <button
       class="modal-close"
       type="button"
@@ -694,14 +1160,21 @@
     </button>
 
     <header class="modal-header">
-      <h3 class="modal-title" id="payroll-title">Employee Payroll System</h3>
+
+      <h3 class="modal-title" id="payroll-title">
+        Employee Payroll System
+      </h3>
+
       <p class="modal-subtitle">
         Demonstrating a full OOP class hierarchy for payroll calculations.
       </p>
+
     </header>
 
     <div class="modal-body">
+
       <div class="modal-gallery">
+
         <button
           class="gallery-nav gallery-prev"
           type="button"
@@ -711,18 +1184,21 @@
         </button>
 
         <div class="gallery-frame">
+
           <img
             src="emp2.JPG"
             alt="Main payroll screen showing employee list"
             class="gallery-image"
             [class.is-active]="currentSlide.payroll === 0"
           />
+
           <img
             src="emp3.JPG"
             alt="Employee details and salary breakdown"
             class="gallery-image"
             [class.is-active]="currentSlide.payroll === 1"
           />
+
           <img
             src="emp4.JPG"
             alt="Summary of payroll calculations"
@@ -738,6 +1214,7 @@
           >
             <span class="eye-icon">👁</span>
           </button>
+
         </div>
 
         <button
@@ -749,65 +1226,93 @@
         </button>
 
         <div class="gallery-dots">
+
           <button
             type="button"
             class="dot"
             [class.is-active]="currentSlide.payroll === 0"
             (click)="goToSlide('payroll', 0)"
           ></button>
+
           <button
             type="button"
             class="dot"
             [class.is-active]="currentSlide.payroll === 1"
             (click)="goToSlide('payroll', 1)"
           ></button>
+
           <button
             type="button"
             class="dot"
             [class.is-active]="currentSlide.payroll === 2"
             (click)="goToSlide('payroll', 2)"
           ></button>
+
         </div>
+
       </div>
 
+
       <div class="modal-content">
+
         <section class="modal-section">
+
           <h4>Project Overview</h4>
+
           <p>
             This payroll system is built as a clean object-oriented project. It uses a class
             hierarchy to model different employee types (for example: FullTime, PartTime,
             Contractor), each with its own pay rules.
           </p>
+
           <p>
             The goal of this project is to clearly demonstrate inheritance, polymorphism,
             and encapsulation in a practical, real-world scenario.
           </p>
+
         </section>
 
+
         <section class="modal-section">
+
           <h4>What it does</h4>
+
           <ul>
             <li>Stores employees with their role, rate, and hours.</li>
             <li>Calculates gross pay based on employee type.</li>
             <li>Supports overtime or bonus logic per subclass.</li>
             <li>Outputs a summary of payroll for all employees.</li>
           </ul>
+
         </section>
 
+
         <section class="modal-section">
-          <h4>Tech & Skills</h4>
+
+          <h4>Tech &amp; Skills</h4>
+
           <div class="pill-row">
+
             <span class="pill">C#</span>
             <span class="pill">OOP</span>
             <span class="pill">Universal Windows Platform</span>
+
           </div>
+
         </section>
+
       </div>
+
     </div>
+
   </div>
 </div>
 
-<!-- Java To-Do List Modal (UPDATED TEXT) -->
+
+<!-- ============================================================= -->
+<!-- Java To-Do List Modal -->
+<!-- ============================================================= -->
+
 <div
   class="modal"
   [class.is-open]="openModalId === 'todolist'"
@@ -818,6 +1323,7 @@
   <div class="modal-backdrop" (click)="closeModal()"></div>
 
   <div class="modal-dialog">
+
     <button
       class="modal-close"
       type="button"
@@ -828,14 +1334,21 @@
     </button>
 
     <header class="modal-header">
-      <h3 class="modal-title" id="todolist-title">Java To-Do List Manager</h3>
+
+      <h3 class="modal-title" id="todolist-title">
+        Java To-Do List Manager
+      </h3>
+
       <p class="modal-subtitle">
         A desktop to-do app using Java, Swing, AWT, and persistence.
       </p>
+
     </header>
 
     <div class="modal-body">
+
       <div class="modal-gallery">
+
         <button
           class="gallery-nav gallery-prev"
           type="button"
@@ -845,18 +1358,21 @@
         </button>
 
         <div class="gallery-frame">
+
           <img
             src="java2.JPG"
             alt="Main task list view in Java Swing"
             class="gallery-image"
             [class.is-active]="currentSlide.todolist === 0"
           />
+
           <img
             src="java3.JPG"
             alt="Task creation/edit form in Swing"
             class="gallery-image"
             [class.is-active]="currentSlide.todolist === 1"
           />
+
           <img
             src="java4.JPG"
             alt="Tasks filtered and styled with Swing/AWT"
@@ -872,6 +1388,7 @@
           >
             <span class="eye-icon">👁</span>
           </button>
+
         </div>
 
         <button
@@ -883,75 +1400,107 @@
         </button>
 
         <div class="gallery-dots">
+
           <button
             type="button"
             class="dot"
             [class.is-active]="currentSlide.todolist === 0"
             (click)="goToSlide('todolist', 0)"
           ></button>
+
           <button
             type="button"
             class="dot"
             [class.is-active]="currentSlide.todolist === 1"
             (click)="goToSlide('todolist', 1)"
           ></button>
+
           <button
             type="button"
             class="dot"
             [class.is-active]="currentSlide.todolist === 2"
             (click)="goToSlide('todolist', 2)"
           ></button>
+
         </div>
+
       </div>
 
+
       <div class="modal-content">
+
         <section class="modal-section">
+
           <h4>Project Overview</h4>
+
           <p>
             A desktop to-do list application written in Java. The UI is built with Swing and AWT,
             and tasks are saved using File I/O and a database layer so that they persist between runs.
           </p>
+
           <p>
             It’s structured as a small MVC-style project: the view is Swing/AWT forms, the model
             is the task objects, and the controller handles adding, updating, and persisting tasks.
           </p>
+
         </section>
 
+
         <section class="modal-section">
+
           <h4>What it does</h4>
+
           <ul>
             <li>Add, edit, and delete tasks from a desktop UI.</li>
             <li>Mark tasks as completed or active.</li>
             <li>Filter tasks by All, Active, or Completed.</li>
             <li>Persist tasks using File I/O and/or a lightweight database.</li>
           </ul>
+
         </section>
 
+
         <section class="modal-section">
-          <h4>Tech & Skills</h4>
+
+          <h4>Tech &amp; Skills</h4>
+
           <div class="pill-row">
+
             <span class="pill">Java</span>
             <span class="pill">Swing &amp; AWT</span>
             <span class="pill">File I/O</span>
             <span class="pill">Database / JDBC</span>
             <span class="pill">MVC Pattern</span>
+
           </div>
+
         </section>
+
       </div>
+
     </div>
+
   </div>
 </div>
 
-<!-- Global image preview modal -->
+
+<!-- ============================================================= -->
+<!-- Global Image Preview Modal -->
+<!-- ============================================================= -->
+
 <div
   class="image-modal"
   *ngIf="isImagePreviewOpen"
   role="dialog"
   aria-modal="true"
 >
-  <div class="image-modal-backdrop" (click)="closeImagePreview()"></div>
+  <div
+    class="image-modal-backdrop"
+    (click)="closeImagePreview()"
+  ></div>
 
   <div class="image-modal-dialog">
+
     <button
       class="image-modal-close"
       type="button"
@@ -960,15 +1509,20 @@
     >
       &times;
     </button>
- 
+
     <img
       *ngIf="previewSrc"
       [src]="previewSrc"
       [alt]="previewAlt || 'Project image preview'"
     />
 
-    <p class="image-modal-caption" *ngIf="previewAlt">
+    <p
+      class="image-modal-caption"
+      *ngIf="previewAlt"
+    >
       {{ previewAlt }}
     </p>
+
   </div>
 </div>
+```

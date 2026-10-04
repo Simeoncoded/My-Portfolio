@@ -1,7 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component, HostListener } from '@angular/core';
 
-type ModalId = 'machinery' | 'smartreserve' | 'petadoption' | 'payroll' | 'todolist';
+type ModalId =
+  | 'jobtracker'
+  | 'machinery'
+  | 'smartreserve'
+  | 'petadoption'
+  | 'payroll'
+  | 'todolist';
 
 @Component({
   selector: 'app-project',
@@ -15,6 +21,7 @@ export class ProjectComponent {
 
   // Each modal has 3 slides
   currentSlide: Record<ModalId, number> = {
+    jobtracker: 0,
     machinery: 0,
     smartreserve: 0,
     petadoption: 0,
@@ -22,15 +29,43 @@ export class ProjectComponent {
     todolist: 0
   };
 
-  // Map of images per modal for gallery preview (MUST match your HTML src values)
+  // Map of images per modal for gallery preview
   private imageMap: Record<ModalId, string[]> = {
-    machinery: ['gantt3.JPG', 'gantt4.JPG', 'gantt2.JPG'],
-    smartreserve: ['res2.JPG', 'res3.JPG', 'res4.JPG'],
-    petadoption: ['pet2.JPG', 'pet3.JPG', 'pet4.JPG'],
-    // 👇 match these to emp2/3/4 in your payroll modal
-    payroll: ['emp2.JPG', 'emp3.JPG', 'emp4.JPG'],
-    // 👇 match these to java2/3/4 in your todo modal
-    todolist: ['java2.JPG', 'java3.JPG', 'java4.JPG']
+    jobtracker: [
+      'jobtracker1.JPG',
+      'jobtracker2.JPG',
+      'jobtracker3.JPG'
+    ],
+
+    machinery: [
+      'gantt3.JPG',
+      'gantt4.JPG',
+      'gantt2.JPG'
+    ],
+
+    smartreserve: [
+      'res2.JPG',
+      'res3.JPG',
+      'res4.JPG'
+    ],
+
+    petadoption: [
+      'pet2.JPG',
+      'pet3.JPG',
+      'pet4.JPG'
+    ],
+
+    payroll: [
+      'emp2.JPG',
+      'emp3.JPG',
+      'emp4.JPG'
+    ],
+
+    todolist: [
+      'java2.JPG',
+      'java3.JPG',
+      'java4.JPG'
+    ]
   };
 
   // Global image preview modal state
@@ -49,6 +84,7 @@ export class ProjectComponent {
   changeSlide(id: ModalId, delta: number): void {
     const total = 3;
     const current = this.currentSlide[id];
+
     this.currentSlide[id] = (current + delta + total) % total;
   }
 
@@ -59,6 +95,7 @@ export class ProjectComponent {
   // For gallery overlay: get the current image src
   getActiveImage(id: ModalId): string {
     const index = this.currentSlide[id] ?? 0;
+
     return this.imageMap[id][index];
   }
 
